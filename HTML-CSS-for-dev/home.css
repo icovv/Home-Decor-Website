@@ -12,7 +12,7 @@
         list-style-type: none;
     }
     /*Home page header*/
-    .header-menu{
+    header{
         display: flex;
         flex-direction: row;
         background-color: #857776;
@@ -20,20 +20,20 @@
         justify-content: center;
         padding: 5px 0px 5px 0px;
     }
-    .header-menu div.container {
+    header div.container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 80%;
     }
-    .header-menu div.left-side{
+    header div.left-side{
         display: flex;
         align-items: center;
         gap: 30px;
         
     }
 
-    .header-menu div.container div.left-side > a{
+    header div.container div.left-side > a{
         font-family: "Tinos", serif;
         font-size: 50px;
     }
@@ -61,6 +61,76 @@
     }
     .right-side ul li i{
         font-size: 20px;
+        cursor:pointer;
     }
 
 /*******************************************************************/
+
+    main{
+        background-color: #dfd4c8;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    main div.first-section div.container{
+        background-image: linear-gradient(to right, #dfd4c8 0%, rgba(253, 253, 253, 0) 100%),url("./images/Home-Images/rectangle-coffee-table-1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:top;
+        height: 70vh;
+    }
+    main div.first-section div.container div.left-side{
+        width: 50%;
+        padding-top: 10%;
+        padding-left: 15%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+    }
+    main div.first-section div.container div.left-side h1{
+        font-size: 40px;
+        color: black;
+
+    }
+    main div.first-section div.container div.left-side p{
+        font-size: 20px;
+        color: #413a3a;
+    }
+    main div.first-section div.container div.left-side button{
+        background-color: #413a3a;
+        font-size: 18px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+    }
+    main div.second-section div.container{
+        position: relative;
+    }
+    main div.second-section div.container div.wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    main div.second-section div.container div.item{
+        background-color: white;
+        width: 330px;
+        height: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+    }
+    main div.second-section div.container div.item img{
+        width: 300px;
+        height: 300px; 
+    }
+    main div.second-section div.container div.item h3{
+        font-size: 20px;
+        color: #857776;
+    }
+
+    /*******************************************************************/
