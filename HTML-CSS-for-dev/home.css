@@ -198,3 +198,15 @@
         font-weight: 300;
     }
 
+    @media (max-width: 1000px){
+        body > main > div.second-section > div.container > div.wrapper{
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        body > footer > div.container{
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
