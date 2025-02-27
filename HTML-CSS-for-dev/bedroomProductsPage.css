@@ -95,7 +95,8 @@
 
     main{
         background-color: #dfd4c8;
-        height: 100vh;
+        font-family: "Cormorant", serif;
+        font-weight: 600;
     }
     main div.container{
         display: flex;
@@ -128,11 +129,69 @@
         width: 80%;
         background-color: white;
         margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    main div.container div.bottom-section {
+        margin-bottom: 50px;
+        height: fit-content;
     }
     main div.container div.bottom-section select.dropdown{
-        
+        margin: 20px 0px 20px 20px;
+        width: 20%;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        background-color: #857776;
+        border-width: 5px ;
+        border-color: #857776;
+        border-radius: 5px;
     }
-
+    main div.items-container{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0px auto;
+        padding-bottom: 50px;
+    }
+    main div.items-container div.item{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 290px;
+        height: 350px;
+        color: #918780;
+    }
+    main div.items-container div.item h3{
+        font-size: 20px;
+    }
+    main div.items-container div.item p{
+        font-size: 22px;
+        color: #918780;
+        font-weight: 800;
+    }
+    main div.items-container div.item button{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #857776;
+        border: none;
+        font-weight: 600;
+        padding: 10px;
+        color: white;
+    }
+    main div.items-container div.item div.image-container img{
+        height: 110%;
+        width: 100%;
+    }
 
     /*******************************************************************/
 
@@ -141,7 +200,6 @@
         color: white;
         font-family: "Tinos", serif;
         padding: 20px 0px 20px 0px;
-        bottom: 0px;
     }
     footer .container{
         display: flex;
@@ -215,6 +273,12 @@
         }
         header.visible{
             display: none;
+        }
+
+    }
+    @media (max-width:1200px){
+        main div.items-container{
+            justify-content: center;
         }
     }
 
