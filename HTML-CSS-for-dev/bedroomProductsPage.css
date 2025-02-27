@@ -1,0 +1,220 @@
+    Html{
+    box-sizing: border-box;
+    position: relative;
+    } 
+    *,*:before,*:after{
+    box-sizing:inherit; 
+    padding:0px;
+    margin: 0px;
+    text-decoration: none;
+    color: inherit;
+    }
+    ul{
+        list-style-type: none;
+    }
+    /*Home page header*/
+    header{
+        display: flex;
+        flex-direction: row;
+        background-color: #857776;
+        font-family: "Tinos", serif;
+        color: #FFFDFC;
+        justify-content: center;
+        padding: 5px 0px 5px 0px;
+    }
+    header div.container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+    }
+    header div.left-side{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        
+    }
+
+    header div.container div.left-side > a{
+        font-size: 50px;
+    }
+    .menu ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+    .menu ul li a{
+        font-size: 20px;
+        text-align: center;
+    }
+    .right-side{
+        display: flex;
+        align-items: center;
+    }
+    .right-side nav ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+    .right-side nav ul li i{
+        font-size: 20px;
+        cursor:pointer;
+    }
+    header.hidden {
+        position: relative;
+        display: none;
+    }
+    header.hidden .container{
+        margin: 0px auto;
+        width: 72%;
+    }
+    header.hidden nav.dropdown{
+        position: absolute;
+        right: 0px;
+        top: 68px;
+        background-color: #857776;
+        width: 30%;
+        z-index: 9000;
+        opacity: 0.95;
+        padding-top: 20px;
+    }
+    header.hidden nav.dropdown ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
+        font-size: 20px;
+        height: 100vh;
+        gap: 20px;
+        text-align: left;
+    }
+
+/*******************************************************************/
+
+    main{
+        background-color: #dfd4c8;
+        height: 100vh;
+    }
+    main div.container{
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        gap: 50px;
+    }
+    main div.container div.top-section{
+        background-image: url('../HTML-CSS-for-dev/images/Home-Images/bedroom.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        height: 400px;
+        width: 80%;
+        margin: 0px auto;
+        position: relative;
+    }
+    main div.container div.top-section span{
+        position: absolute;
+        width: 100%;
+        background-color:#857776 ;
+        bottom: 0px;
+        text-align: center;
+        font-size: 35px;
+        opacity: 0.8;
+        color: white;
+    }
+
+    main div.container div.bottom-section{
+        width: 80%;
+        background-color: white;
+        margin: 0px auto;
+    }
+    main div.container div.bottom-section select.dropdown{
+        
+    }
+
+
+    /*******************************************************************/
+
+    footer{
+        background-color: #857776;
+        color: white;
+        font-family: "Tinos", serif;
+        padding: 20px 0px 20px 0px;
+        bottom: 0px;
+    }
+    footer .container{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 100px;
+        margin: 0px auto;
+    }
+    footer .container-right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 100px;
+    }
+    footer .container .left-side h2{
+        font-size: 80px;
+        font-weight: 300;
+    }
+    footer .container .middle{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+    }
+    footer .container .middle h3{
+        font-size: 25px;
+        font-weight: 300;
+    }
+    footer .container .middle ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    footer .container .middle ul li{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    footer .container .right-side{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+    }
+    footer .container .right-side ul{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }    
+    footer .container .right-side h3{
+        font-size: 25px;
+        font-weight: 300;
+    }
+
+    @media (max-width: 1000px){
+        body > main > div.second-section > div.container > div.wrapper{
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        body > footer > div.container{
+            flex-direction: column;
+            gap: 20px;
+        }
+        header.hidden{
+            display: block;
+        }
+        header.visible{
+            display: none;
+        }
+    }
+
