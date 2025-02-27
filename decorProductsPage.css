@@ -110,10 +110,10 @@
         gap: 50px;
     }
     main div.container div.top-section{
-        background-image: url('../HTML-CSS-for-dev/images/Home-Images/bedroom.jpg');
+        background-image: url('./HTML-CSS-for-dev/images/Home-Images/decor.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: bottom;
+        background-position: center;
         height: 450px;
         width: 80%;
         margin: 0px auto;
