@@ -47,6 +47,12 @@
         font-size: 20px;
         text-align: center;
     }
+
+    
+    .menu ul li:hover{
+        color: #dfd4c8;
+    }
+
     .right-side{
         display: flex;
         align-items: center;
