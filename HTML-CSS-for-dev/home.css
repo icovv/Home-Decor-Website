@@ -95,6 +95,25 @@
         gap: 20px;
         text-align: left;
     }
+    header.visible div.right-side ul li:first-child{
+        position: relative;
+    }
+    header.visible div.right-side ul li:first-child div.item-counter{
+        background-color: red;
+        font-size: 12px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        position: absolute;
+        text-align: center;
+        font-weight: bold;
+        right: -5px;
+        bottom: -5px;
+    }
+    header.visible div.right-side ul li:first-child div.cart-dropdown{
+        position: absolute;
+        border: black;
+    }
 
 /*******************************************************************/
 
