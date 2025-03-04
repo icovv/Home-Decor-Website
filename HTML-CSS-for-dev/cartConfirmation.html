@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="cartConfirmation.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="visible">
+        <div class="container">
+        <div class="left-side">
+            <a href="">Home Decor</a>
+        <nav class="menu">
+            <ul>
+            <li><a href="">Bedroom</a></li>
+            <li><a href="">Decor</a></li>
+            <li><a href="">Dining Room</a></li>
+            <li><a href="">Sign In</a></li>
+            <li><a href="">Admin</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="right-side">
+           <nav> 
+            <ul>
+                <li><i class="fa-solid fa-bag-shopping Cart"></i>
+                <div class="item-counter">1</div>
+                <div class="cart-dropdown">
+                    <div class="top-section">
+                        <h3>Order</h3>
+                    </div>
+                    <div class="middle-section">
+                        <div class="cart-single-item">
+                        <div class="left-side">
+                            <img src="../HTML-CSS-for-dev/images/Home-Images/decor.jpg" alt="">
+                        </div>
+                        <div class="right-side">
+                            <h4>Product Name</h4>
+                            <div class="bottom-side">
+                                <span>1 x 65.00$</span>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="cart-single-item">
+                        <div class="left-side">
+                            <img src="../HTML-CSS-for-dev/images/Home-Images/decor.jpg" alt="">
+                        </div>
+                        <div class="right-side">
+                            <h4>Product Name</h4>
+                            <div class="bottom-side">
+                                <span>1 x 65.00$</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="bottom-section">
+                        <h4>Total Amount:</h4>
+                        <p>20.99$</p>
+                    </div>
+                </div>
+                </li>
+                <li><i class="fa-regular fa-user"></i></li>
+                <li><i class="fa-solid fa-right-from-bracket"></i></li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+    </header>
+    <header class="hidden">
+        <div class="container">
+        <div class="left-side">
+            <a href="">Home Decor</a>
+        </div>
+        <div class="right-side">
+            <nav>
+            <ul>
+                <li><i class="fa-solid fa-bars" style="color: #ffffff;"></i></li>
+                <li><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></li>
+            </ul>
+            </nav>
+        </div>
+        <nav class="dropdown">
+            <ul>
+                <li><a href="">Bedroom</a></li>
+                <li><a href="">Decor</a></li>
+                <li><a href="">Dining Room</a></li>
+                <li><a href="">Cart</a></li>
+                <li><a href="">Profile</a></li>
+                <li><a href="">Sign In</a></li>
+                <li><a href="">Logout</a></li>
+                <li><a href="">Admin</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="top-side">
+                <h1>Delivery and Payment</h1>
+            </div>
+            <div class="bottom-side">
+                <div class="left-side">
+                    <div class="container">
+                        <form>
+                            <div class="data">
+                            <h2>Personal Information</h2>
+                            <input type="text" name="firstName" placeholder="First Name*">
+                            <input type="text" name="lastName" placeholder="Last Name*">
+                            <input type="text" name="email" placeholder="Email*">
+                            <input type="text" name="phone" placeholder="Phone*">
+                            </div>
+                            <div class="data">
+                            <h2>Delivery Address</h2>
+                            <div class="city-postal">
+                            <input type="text" name="city" placeholder="City*">
+                            <input type="number" name="postalCode" placeholder="Postal Code*">
+                            </div>
+                            <input type="text" name="addess" placeholder="Address*">
+                            </div>
+                            <div class="data">
+                                <h2>Comments</h2>
+                                <textarea type="text" placeholder="Additional Comments*"></textarea>
+                            </div>
+                            </form>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <h3>Your Order</h3>
+                    <div class="container">
+                        <div class="single-item">
+                            <div class="left-side">
+                                <img src="../HTML-CSS-for-dev/images/Home-Images/bedroom.jpg" alt="">
+                            </div>
+                            <div class="right-side">
+                                <h3>Product Name</h3>
+                                <div class="price-quantity">
+                                    <p>10 x 65.00$</p>
+                                    <p>65.00$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total-amount">
+                        <h4>Total Amount</h4>
+                        <p>200.00$</p>
+                    </div>
+                    <a>Continue</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+        <div class="container-left">
+        <div class="left-side">
+            <h2>Home Decor</h2>
+        </div>
+        </div>
+        <div class="container-right">
+        <div class="middle">
+            <h3>Contacts</h3>
+            <ul>
+                <li><i class="fa-solid fa-phone"></i><span>+111 11 111 1111</span></li>
+                <li><i class="fa-solid fa-envelope"></i></i><span>email@emai.email</span></li>
+                <li><i class="fa-solid fa-location-dot"></i></i><span>location</span></li>
+            </ul>
+        </div>
+        <div class="right-side">
+            <h3>Information</h3>
+            <ul>
+                <li>Terms & Conditions</li>
+                <li>Terms of Use</li>
+                <li>Privacy Notice</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </footer>
+</body>
+</html>
+
