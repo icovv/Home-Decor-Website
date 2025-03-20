@@ -1,0 +1,62 @@
+footer{
+    background-color: #857776;
+    color: white;
+    font-family: "Tinos", serif;
+    padding: 20px 0px 20px 0px;
+}
+footer .container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 100px;
+    margin: 0px auto;
+}
+footer .container-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+}
+footer .container .left-side h2{
+    font-size: 80px;
+    font-weight: 300;
+}
+footer .container .middle{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+}
+footer .container .middle h3{
+    font-size: 25px;
+    font-weight: 300;
+}
+footer .container .middle ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .container .middle ul li{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+footer .container .right-side{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+}
+footer .container .right-side ul{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}    
+footer .container .right-side h3{
+    font-size: 25px;
+    font-weight: 300;
+}
