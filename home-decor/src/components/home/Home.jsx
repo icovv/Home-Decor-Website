@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./Home.module.css"
 
 export default function Home(){
@@ -22,18 +23,24 @@ export default function Home(){
     <div className={styles["second-section"]}>
         <div className={styles.container}>
         <div className={styles.wrapper}>
+            <Link to={'/catalog-bedroom'}>
             <div className={styles.item}>
             <img src="/bedroom.jpg" alt="" />
             <h3>BEDROOM</h3>
             </div>
+            </Link>
+            <Link to={"/catalog-decor"}>
             <div className={styles.item}>
             <img src="/decor.jpg" alt="" />
             <h3>DECOR</h3>
             </div>
+            </Link>
+            <Link to={"/catalog-dining-room"}>
             <div className={styles.item}>
             <img src="/dining-room.jpg" alt="" />
             <h3>DINING ROOM</h3>
             </div>
+            </Link>
         </div>
         </div>
     </div>
