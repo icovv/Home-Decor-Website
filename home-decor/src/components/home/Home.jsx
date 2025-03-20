@@ -23,15 +23,15 @@ export default function Home(){
         <div className={styles.container}>
         <div className={styles.wrapper}>
             <div className={styles.item}>
-            <img src="./public/bedroom.jpg" alt="" />
+            <img src="/bedroom.jpg" alt="" />
             <h3>BEDROOM</h3>
             </div>
             <div className={styles.item}>
-            <img src="./public/decor.jpg" alt="" />
+            <img src="/decor.jpg" alt="" />
             <h3>DECOR</h3>
             </div>
             <div className={styles.item}>
-            <img src="./public/dining-room.jpg" alt="" />
+            <img src="/dining-room.jpg" alt="" />
             <h3>DINING ROOM</h3>
             </div>
         </div>

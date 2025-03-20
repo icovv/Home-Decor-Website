@@ -41,7 +41,7 @@ export default function Header(){
                   <div className={styles["cart-single-item"]}>
                     <div className={styles["left-side"]}>
                       <img
-                        src="/public/decor.jpg"
+                        src="/decor.jpg"
                         alt=""
                       />
                     </div>
@@ -55,7 +55,7 @@ export default function Header(){
                   <div className={styles["cart-single-item"]}>
                     <div className={styles["left-side"]}>
                       <img
-                        src="/public/decor.jpg"
+                        src="/decor.jpg"
                         alt=""
                       />
                     </div>

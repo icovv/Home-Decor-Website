@@ -8,7 +8,7 @@ main{
     font-family: "Cormorant", serif;
 }
 main div.first-section div.container{
-    background-image: linear-gradient(to right, #dfd4c8 0%, rgba(253, 253, 253, 0) 100%),url("./public/rectangle-coffee-table-1.jpg");
+    background-image: linear-gradient(to right, #dfd4c8 0%, rgba(253, 253, 253, 0) 100%),url("/rectangle-coffee-table-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
