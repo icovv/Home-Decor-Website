@@ -17,7 +17,7 @@ export default function Header(){
               <Link to='/catalog-decor'>Decor</Link>
             </li>
             <li>
-              <a href="">Dining Room</a>
+            <Link to='/catalog-dining-room'>Dining Room</Link>
             </li>
             <li>
               <a href="">Sign In</a>

@@ -7,6 +7,7 @@ import Footer from './components/common/footer/Footer'
 import Home from './components/home/Home'
 import Bedroom from './components/catalog/bedroom/Bedroom'
 import Decor from './components/catalog/decor/Decor'
+import DiningRoom from './components/catalog/dining-room/DiningRoom'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/catalog-bedroom' element={<Bedroom></Bedroom>}></Route>
         <Route path='/catalog-decor' element={<Decor></Decor>}></Route>
+        <Route path='/catalog-dining-room' element={<DiningRoom></DiningRoom>}></Route>
         
       </Routes>
       
