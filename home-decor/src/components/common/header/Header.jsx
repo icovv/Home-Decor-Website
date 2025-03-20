@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 
 export default function Header(){
@@ -6,11 +7,11 @@ export default function Header(){
         <header className= {styles.visible}>
     <div className= {styles.container}>
       <div className={styles["left-side"]}>
-        <a href="">Home Decor</a>
+        <Link to="/">Home Decor</Link>
         <nav className={styles.menu}>
           <ul>
             <li>
-              <a href="">Bedroom</a>
+              <Link to='/catalog-bedroom'>Bedroom</Link>
             </li>
             <li>
               <a href="">Decor</a>
