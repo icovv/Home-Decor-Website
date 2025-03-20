@@ -112,6 +112,11 @@ main div.items-container div.item div.image-container img{
     height: 105%;
     width: 100%;
 }
+
+.width100{
+    width: 100%;
+}
+
 @media (max-width:1850px){
     main div.items-container{
         justify-content: center;
