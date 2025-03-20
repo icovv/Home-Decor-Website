@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import styles from "./Bedroom.module.css"
+import BedroomItem from "./bedroom-single-item/BedroomItem"
 
 export default function Bedroom(){
     return(
@@ -15,62 +17,9 @@ export default function Bedroom(){
         <option value="priceDown">Price ↓</option>
       </select>
       <div className={styles["items-container"]}>
-        <div className={styles.item}>
-          <div className={styles["image-container"]}>
-            <img
-              src="/bedroom.jpg"
-              alt=""
-            />
-          </div>
-          <h3>This is the image name!</h3>
-          <p>144.90$</p>
-          <button>
-            <i className="fa-solid fa-cart-shopping" />
-            <span>ADD TO CART</span>{" "}
-          </button>
-        </div>
-        <div className={styles.item}>
-          <div className={styles["image-container"]}>
-            <img
-              src="/bedroom.jpg"
-              alt=""
-            />
-          </div>
-          <h3>This is the image name!</h3>
-          <p>144.90$</p>
-          <button>
-            <i className="fa-solid fa-cart-shopping" />
-            <span>ADD TO CART</span>{" "}
-          </button>
-        </div>
-        <div className={styles.item}>
-          <div className={styles["image-container"]}>
-            <img
-              src="/bedroom.jpg"
-              alt=""
-            />
-          </div>
-          <h3>This is the image name!</h3>
-          <p>144.90$</p>
-          <button>
-            <i className="fa-solid fa-cart-shopping" />
-            <span>ADD TO CART</span>{" "}
-          </button>
-        </div>
-        <div className={styles.item}>
-          <div className={styles["image-container"]}>
-            <img
-              src="/bedroom.jpg"
-              alt=""
-            />
-          </div>
-          <h3>This is the image name!</h3>
-          <p>144.90$</p>
-          <button>
-            <i className="fa-solid fa-cart-shopping" />
-            <span>ADD TO CART</span>
-          </button>
-        </div>
+        <BedroomItem></BedroomItem>
+        <BedroomItem></BedroomItem>
+        <BedroomItem></BedroomItem>
       </div>
     </div>
   </div>
