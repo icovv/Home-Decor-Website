@@ -1,3 +1,4 @@
+import DecorItem from "./decor-single-item/DecorItem"
 import styles from "./Decor.module.css"
 
 export default function Decor(){
@@ -15,62 +16,9 @@ export default function Decor(){
               <option value="priceDown">Price ↓</option>
             </select>
             <div className={styles["items-container"]}>
-              <div className={styles.item}>
-                <div className={styles["image-container"]}>
-                  <img
-                    src="/decor.jpg"
-                    alt=""
-                  />
-                </div>
-                <h3>This is the image name!</h3>
-                <p>144.90$</p>
-                <button>
-                  <i className="fa-solid fa-cart-shopping" />
-                  <span>ADD TO CART</span>{" "}
-                </button>
-              </div>
-              <div className={styles.item}>
-                <div className={styles["image-container"]}>
-                  <img
-                    src="/decor.jpg"
-                    alt=""
-                  />
-                </div>
-                <h3>This is the image name!</h3>
-                <p>144.90$</p>
-                <button>
-                  <i className="fa-solid fa-cart-shopping" />
-                  <span>ADD TO CART</span>{" "}
-                </button>
-              </div>
-              <div className={styles.item}>
-                <div className={styles["image-container"]}>
-                  <img
-                    src="/decor.jpg"
-                    alt=""
-                  />
-                </div>
-                <h3>This is the image name!</h3>
-                <p>144.90$</p>
-                <button>
-                  <i className="fa-solid fa-cart-shopping" />
-                  <span>ADD TO CART</span>{" "}
-                </button>
-              </div>
-              <div className={styles.item}>
-                <div className={styles["image-container"]}>
-                  <img
-                    src="/decor.jpg"
-                    alt=""
-                  />
-                </div>
-                <h3>This is the image name!</h3>
-                <p>144.90$</p>
-                <button>
-                  <i className="fa-solid fa-cart-shopping" />
-                  <span>ADD TO CART</span>
-                </button>
-              </div>
+              <DecorItem></DecorItem>
+              <DecorItem></DecorItem>
+              <DecorItem></DecorItem>
             </div>
           </div>
         </div>
