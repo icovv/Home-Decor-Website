@@ -11,6 +11,7 @@ import DiningRoom from './components/catalog/dining-room/DiningRoom'
 import BedroomDetails from './components/catalog/bedroom/bedroom-details/BedroomDetails'
 import DecorDetails from './components/catalog/decor/decor-details/DecorDetails'
 import DiningRoomDetails from './components/catalog/dining-room/dining-room-details/DiningRoomDetails'
+import Profile from './components/profile/Profile'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/catalog-bedroom/:itemID' element={<BedroomDetails></BedroomDetails>}></Route>
         <Route path='/catalog-decor/:itemID' element={<DecorDetails></DecorDetails>}></Route>
         <Route path='/catalog-dining-room/:itemID' element={<DiningRoomDetails></DiningRoomDetails>}></Route>
+        <Route path='/profile/:userID' element={<Profile></Profile>}></Route>
         
       </Routes>
       
