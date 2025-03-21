@@ -1,0 +1,106 @@
+main.details{
+    background-color: #dfd4c8;
+    font-family: "Cormorant", serif;
+    padding: 50px 0px 50px 0px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main div.container{
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+main div.container div.left-side{
+    flex: 0 0 calc(100%/2)
+}
+
+main div.container div.left-side img{
+    width: 100%;
+    height: 100%;
+}
+main div.container div.right-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    color: #857776;
+    width: 100%;
+    gap: 40px;
+}
+
+main div.container div.right-side div.top-side{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 80%;
+    text-align: center;
+}
+main div.container div.right-side div.top-side div.price-counter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+main div.container div.right-side div.top-side div.price-counter p{
+    font-size: 30px;
+    font-weight: bold;
+}
+main div.container div.right-side div.top-side div.price-counter div.counter{
+    border: 2px solid #857776;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0px 15px 0px 15px;
+    font-size: 20px;
+}
+main div.container div.right-side div.top-side div.price-counter div.counter span.icons i{
+    font-size: 15px;
+    cursor: pointer;
+}
+main div.container div.right-side div.top-side div.price-counter div.counter span.number{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+main div.container div.right-side button{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #857776;
+    border: none;
+    font-weight: 600;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+main div.container div.right-side div.bottom-side{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: flex-start;
+    gap: 10px;
+}
+main div.container div.right-side div.bottom-side h3{
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+
+@media (max-width: 1100px){
+    main div.container{
+        flex-direction: column;
+        height: 80%;
+        width: 80%;
+        gap: 40px;
+    }
+}

@@ -12,7 +12,7 @@ export default function DecorItem(){
         </div>
         <h3>This is the image name!</h3>
         <p>144.90$</p>
-        <Link to={"/"}>
+        <Link to={"/catalog-decor/:itemID"}>
         <button className={styles.width100}>
           <i className="fa-solid fa-cart-shopping" />
           <span>ADD TO CART</span>{" "}

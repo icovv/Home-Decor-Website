@@ -8,6 +8,9 @@ import Home from './components/home/Home'
 import Bedroom from './components/catalog/bedroom/Bedroom'
 import Decor from './components/catalog/decor/Decor'
 import DiningRoom from './components/catalog/dining-room/DiningRoom'
+import BedroomDetails from './components/catalog/bedroom/bedroom-details/BedroomDetails'
+import DecorDetails from './components/catalog/decor/decor-details/DecorDetails'
+import DiningRoomDetails from './components/catalog/dining-room/dining-room-details/DiningRoomDetails'
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
         <Route path='/catalog-bedroom' element={<Bedroom></Bedroom>}></Route>
         <Route path='/catalog-decor' element={<Decor></Decor>}></Route>
         <Route path='/catalog-dining-room' element={<DiningRoom></DiningRoom>}></Route>
+        <Route path='/catalog-bedroom/:itemID' element={<BedroomDetails></BedroomDetails>}></Route>
+        <Route path='/catalog-decor/:itemID' element={<DecorDetails></DecorDetails>}></Route>
+        <Route path='/catalog-dining-room/:itemID' element={<DiningRoomDetails></DiningRoomDetails>}></Route>
         
       </Routes>
       
