@@ -1,56 +1,58 @@
-main.signIn {
+main.sign-up {
     background-color: #dfd4c8;
-    min-height: 80vh;
+    height: 80vh;
     font-family: "Cormorant", serif;
     padding-top: 100px;
     gap: 0px;
 }
 
-.login-form {
+.register-form {
     color: white;
     width: 360px;
-    height: 300px;
+    height: 380px;
     margin: 0px auto;
     background-color: #dbd1c1;
     border: 2px solid black;
     color: black;
 }
 
-.login-form h1 {
+.register-form h1 {
     text-align: center;
     padding-top: 10px;
 }
 
 
-form {
+.register-form h4 {
+    text-align: center;
+}
+
+.register-form form {
     width: 300px;
     margin-left: 15px;
 }
 
-form label {
+.register-form form label {
     display: flex;
     margin-top: 20px;
     margin-bottom: 5px;
     font-size: 18px;
 }
 
-form input {
+.register-form form input {
     width: 320px;
     height: 30px;
     padding-left: 7px;
     border: none;
     border: 1px solid gray;
     border-radius: 8px;
-    outline: none;
 }
 
-input[type="submit"] {
+.register-form input[type="submit"] {
     width: 320px;
     height: 35px;
-    margin-top: 20px;
-    margin-left: 5px;
-    border: none;
+    margin-top: 30px;
     background-color: #857776;
+    margin-left: 5px;
     color: white;
     font-size: 15px;
 }
@@ -60,7 +62,7 @@ input[type="submit"]:hover {
     color: #dfd4c8;
 }
 
-.login-form p {
+.register-form p {
     text-align: center;
     padding-top: 20px;
     font-size: 15px;
@@ -78,7 +80,7 @@ input[type="submit"]:hover {
 .anchr {
     text-align: right;
     font-size: 15px;
-    margin-left: 10px;
+    margin-left: 5px;
     color: #857776;
 }
 
@@ -88,7 +90,7 @@ input[type="submit"]:hover {
 
 .no-acc-box {
     color: white;
-    width: 300px;
+    width: 340px;
     height: 50px;
     margin: auto;
     margin-top: 20px;
