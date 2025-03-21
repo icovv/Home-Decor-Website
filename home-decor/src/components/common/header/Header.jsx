@@ -20,7 +20,7 @@ export default function Header(){
             <Link to='/catalog-dining-room'>Dining Room</Link>
             </li>
             <li>
-              <a href="">Sign In</a>
+              <Link to='/sign-in'>Sign In</Link>
             </li>
             <li>
               <a href="">Admin</a>

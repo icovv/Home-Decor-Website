@@ -12,6 +12,7 @@ import BedroomDetails from './components/catalog/bedroom/bedroom-details/Bedroom
 import DecorDetails from './components/catalog/decor/decor-details/DecorDetails'
 import DiningRoomDetails from './components/catalog/dining-room/dining-room-details/DiningRoomDetails'
 import Profile from './components/profile/Profile'
+import SignIn from './components/sign-in/SignIn'
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path='/catalog-decor/:itemID' element={<DecorDetails></DecorDetails>}></Route>
         <Route path='/catalog-dining-room/:itemID' element={<DiningRoomDetails></DiningRoomDetails>}></Route>
         <Route path='/profile/:userID' element={<Profile></Profile>}></Route>
-        
+        <Route path='/sign-in' element={<SignIn></SignIn>}></Route>
       </Routes>
       
       <Footer></Footer>
