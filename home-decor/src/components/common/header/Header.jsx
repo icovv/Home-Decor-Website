@@ -75,7 +75,7 @@ export default function Header(){
               </div>
             </li>
             <li>
-              <i className="fa-regular fa-user" />
+              <Link to='/profile/1'><i className="fa-regular fa-user" /></Link>
             </li>
             <li>
               <i className="fa-solid fa-right-from-bracket" />
@@ -88,7 +88,7 @@ export default function Header(){
   <header className={styles.hidden}>
     <div className={styles.container}>
       <div className={styles["left-side"]}>
-        <a href="">Home Decor</a>
+      <Link to="/">Home Decor</Link>
       </div>
       <div className={styles["right-side"]}>
         <nav>
@@ -105,22 +105,22 @@ export default function Header(){
       <nav className={styles.dropdown}>
         <ul>
           <li>
-            <a href="">Bedroom</a>
+          <Link to='/catalog-bedroom'>Bedroom</Link>
           </li>
           <li>
-            <a href="">Decor</a>
+          <Link to='/catalog-decor'>Decor</Link>
           </li>
           <li>
-            <a href="">Dining Room</a>
+          <Link to='/catalog-dining-room'>Dining Room</Link>
           </li>
           <li>
             <a href="">Cart</a>
           </li>
           <li>
-            <a href="">Profile</a>
+          <Link to='/profile/1'>Profile</Link>
           </li>
           <li>
-            <a href="">Sign In</a>
+          <Link to='/sign-in'>Sign In</Link>
           </li>
           <li>
             <a href="">Logout</a>

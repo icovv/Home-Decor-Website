@@ -6,7 +6,7 @@ export default function SignIn() {
         <main className={styles.signIn}>
             <div className={styles["login-form"]}>
                 <h1>Sign in</h1>
-                <form action="#" method="">
+                <form className={styles.login} action="#" method="">
                     <label>Email</label>
                     <input type="text" name="" />
                     <label>Password</label>

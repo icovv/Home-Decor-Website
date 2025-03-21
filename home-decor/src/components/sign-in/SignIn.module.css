@@ -19,22 +19,26 @@ main.signIn {
 .login-form h1 {
     text-align: center;
     padding-top: 10px;
+    font-weight: bold;
+    color: #857776;
 }
 
 
-form {
+form.login {
     width: 300px;
     margin-left: 15px;
 }
 
-form label {
+form.login label {
     display: flex;
     margin-top: 20px;
     margin-bottom: 5px;
     font-size: 18px;
+    font-weight: bold;
+    color: #857776;
 }
 
-form input {
+form.login input {
     width: 320px;
     height: 30px;
     padding-left: 7px;

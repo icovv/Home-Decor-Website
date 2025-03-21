@@ -19,6 +19,8 @@ main.sign-up {
 .register-form h1 {
     text-align: center;
     padding-top: 10px;
+    font-weight: bold;
+    color: #857776;
 }
 
 
@@ -36,6 +38,8 @@ main.sign-up {
     margin-top: 20px;
     margin-bottom: 5px;
     font-size: 18px;
+    font-weight: bold;
+    color: #857776;
 }
 
 .register-form form input {
