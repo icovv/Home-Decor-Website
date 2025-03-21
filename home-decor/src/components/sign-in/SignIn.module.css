@@ -1,15 +1,16 @@
-main{
+main.signIn{
     background-color: #dfd4c8;
-    height: 80vh;
+    min-height: 80vh;
     font-family: "Cormorant", serif;
     padding-top: 100px;
+    gap: 0px;
 }
 
 .login-form {
     color: white;
     width: 360px;
     height: 300px;
-    margin: auto;
+    margin: 0px auto;
     background-color: #dbd1c1;
     border: 2px solid black;
     color: black;
@@ -77,6 +78,9 @@ cursor: pointer;
     font-size: 15px;
     margin-left: 10px;
     color: #857776;
+}
+.anchr:hover{
+    text-decoration: underline;
 }
 
 .no-acc-box {

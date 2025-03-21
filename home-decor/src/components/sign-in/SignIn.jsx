@@ -2,7 +2,7 @@ import styles from "./SignIn.module.css"
 
 export default function SignIn() {
     return (
-        <main>
+        <main className={styles.signIn}>
             <div className={styles["login-form"]}>
                 <h1>Sign in</h1>
                 <form action="#" method="">
