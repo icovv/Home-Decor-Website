@@ -7,7 +7,7 @@ export default function AdminList() {
         <div className={styles.menu}>
             <ul>
                 <Link to='/admin/list' className={`${styles.item} ${styles.underline} ${styles.hover}`}>Items</Link>
-                <li className={`${styles.item} ${styles.hover}`}>Create</li>
+                <Link to='/admin/create' className={`${styles.item} ${styles.hover}`}>Create</Link>
             </ul>
         </div>
         <div className={styles.container}>

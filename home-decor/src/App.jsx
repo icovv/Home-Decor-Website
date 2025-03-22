@@ -18,6 +18,7 @@ import CartOverview from './components/cart/overview/CartOverview'
 import OrderDetails from './components/cart/order/OrderDetails'
 import Admin from './components/admin/admin-header/Admin'
 import AdminList from './components/admin/admin-list/AdminList'
+import AdminCreate from './components/admin/admin-create/AdminCreate'
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
         <Route path='/cart/order' element={<OrderDetails></OrderDetails>}></Route>
         <Route path='/admin' element={<Admin></Admin>}></Route>
         <Route path='/admin/list' element={<AdminList></AdminList>}></Route>
+        <Route path='/admin/create' element={<AdminCreate></AdminCreate>}></Route>
+
         
       </Routes>
       
