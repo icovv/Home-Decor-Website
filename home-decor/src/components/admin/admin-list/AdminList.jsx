@@ -44,7 +44,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                  <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -60,7 +60,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -76,7 +76,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -92,7 +92,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -108,7 +108,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -124,7 +124,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -140,7 +140,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -156,7 +156,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -172,7 +172,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />
@@ -188,7 +188,7 @@ export default function AdminList() {
                             <td>These are the characteristics of the contect</td>
                             <td>
                                 <button>
-                                    <i className="fa-solid fa-pen-to-square" />
+                                    <Link to={'/admin/edit/1'}><i className="fa-solid fa-pen-to-square" /></Link>
                                 </button>
                                 <button>
                                     <i className="fa-solid fa-trash" />

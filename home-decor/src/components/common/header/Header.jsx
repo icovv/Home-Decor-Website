@@ -127,7 +127,7 @@ export default function Header(){
             <a href="">Logout</a>
           </li>
           <li>
-            <a href="">Admin</a>
+          <Link to='/admin'>Admin</Link>
           </li>
         </ul>
       </nav>

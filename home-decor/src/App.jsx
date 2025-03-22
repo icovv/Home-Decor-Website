@@ -19,6 +19,7 @@ import OrderDetails from './components/cart/order/OrderDetails'
 import Admin from './components/admin/admin-header/Admin'
 import AdminList from './components/admin/admin-list/AdminList'
 import AdminCreate from './components/admin/admin-create/AdminCreate'
+import AdminEdit from './components/admin/admin-edit/AdminEdit'
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path='/admin' element={<Admin></Admin>}></Route>
         <Route path='/admin/list' element={<AdminList></AdminList>}></Route>
         <Route path='/admin/create' element={<AdminCreate></AdminCreate>}></Route>
+        <Route path='/admin/edit/:itemID' element={<AdminEdit></AdminEdit>}></Route>
 
         
       </Routes>
