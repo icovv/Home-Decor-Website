@@ -14,6 +14,7 @@ import DiningRoomDetails from './components/catalog/dining-room/dining-room-deta
 import Profile from './components/profile/Profile'
 import SignIn from './components/sign-in/SignIn'
 import SignUp from './components/sign-in/sign-up/SignUp'
+import CartOverview from './components/cart/overview/CartOverview'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/profile/:userID' element={<Profile></Profile>}></Route>
         <Route path='/sign-in' element={<SignIn></SignIn>}></Route>
         <Route path='/sign-up' element={<SignUp></SignUp>}></Route>
+        <Route path='/cart' element={<CartOverview></CartOverview>}></Route>
       </Routes>
       
       <Footer></Footer>

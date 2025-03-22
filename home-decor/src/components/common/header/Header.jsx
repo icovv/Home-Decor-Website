@@ -32,7 +32,7 @@ export default function Header(){
         <nav>
           <ul>
             <li>
-              <i className="fa-solid fa-bag-shopping Cart" />
+            <Link to='/cart'><i className="fa-solid fa-bag-shopping Cart" /></Link> 
               <div className= {styles["item-counter"]}>1</div>
               <div className={styles["cart-dropdown"]}>
                 <div className={styles["top-section"]}>
@@ -114,7 +114,7 @@ export default function Header(){
           <Link to='/catalog-dining-room'>Dining Room</Link>
           </li>
           <li>
-            <a href="">Cart</a>
+          <Link to='/cart'>Cart</Link>  
           </li>
           <li>
           <Link to='/profile/1'>Profile</Link>
