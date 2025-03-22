@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./CartOverview.module.css"
 
 export default function CartOverview() {
@@ -114,7 +115,7 @@ export default function CartOverview() {
                             <h4>Total Amount</h4>
                             <p>200.00$</p>
                         </div>
-                        <a>Continue</a>
+                        <Link to='/cart/order'>Continue</Link>
                     </div>
                 </div>
             </div>

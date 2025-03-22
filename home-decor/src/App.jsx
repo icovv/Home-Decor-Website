@@ -15,6 +15,7 @@ import Profile from './components/profile/Profile'
 import SignIn from './components/sign-in/SignIn'
 import SignUp from './components/sign-in/sign-up/SignUp'
 import CartOverview from './components/cart/overview/CartOverview'
+import OrderDetails from './components/cart/order/OrderDetails'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path='/sign-in' element={<SignIn></SignIn>}></Route>
         <Route path='/sign-up' element={<SignUp></SignUp>}></Route>
         <Route path='/cart' element={<CartOverview></CartOverview>}></Route>
+        <Route path='/cart/order' element={<OrderDetails></OrderDetails>}></Route>
       </Routes>
       
       <Footer></Footer>
