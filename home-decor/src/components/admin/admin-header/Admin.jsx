@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./Admin.module.css"
 
 export default function Admin() {
@@ -5,8 +6,8 @@ export default function Admin() {
         <main>
         <div className={styles.menu}>
             <ul>
-                <li className={styles.item}>Items</li>
-                <li className={styles.item}>Create</li>
+                <Link to='/admin/list' className={`${styles.item} ${styles.hover}`}>Items</Link>
+                <li className={`${styles.item} ${styles.hover}`}>Create</li>
             </ul>
         </div>
         </main>

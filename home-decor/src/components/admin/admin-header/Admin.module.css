@@ -23,8 +23,8 @@ main div.menu ul{
 main div.menu ul li{
     cursor: pointer;
 }
-main div.menu ul li:hover{
-    border-bottom: 2px solid #dfd4c8;
+main div.menu ul .hover:hover{
+    color: #dfd4c8;
 }
 /* main div.menu ul li:nth-child(1){
     border-bottom: 2px solid #dfd4c8;
