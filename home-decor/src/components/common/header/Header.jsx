@@ -23,7 +23,7 @@ export default function Header(){
               <Link to='/sign-in'>Sign In</Link>
             </li>
             <li>
-              <a href="">Admin</a>
+              <Link to='/admin'>Admin</Link>
             </li>
           </ul>
         </nav>
@@ -32,7 +32,7 @@ export default function Header(){
         <nav>
           <ul>
             <li>
-            <Link to='/cart'><i className="fa-solid fa-bag-shopping Cart" /></Link> 
+            <Link to='/cart'><i className="fa-solid fa-bag-shopping Cart" />
               <div className= {styles["item-counter"]}>1</div>
               <div className={styles["cart-dropdown"]}>
                 <div className={styles["top-section"]}>
@@ -73,6 +73,7 @@ export default function Header(){
                   <p>20.99$</p>
                 </div>
               </div>
+              </Link> 
             </li>
             <li>
               <Link to='/profile/1'><i className="fa-regular fa-user" /></Link>

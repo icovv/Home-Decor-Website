@@ -1,0 +1,31 @@
+main{
+    background-color: #dfd4c8;
+    min-height: 80vh;
+    font-family: "Cormorant", serif;
+    padding-top: 20px;
+}
+
+main div.menu{
+    width: 20%;
+    margin: 0px auto;
+    border-right: 3px solid #857776;
+    background-color: #857776;
+    color: white;
+    padding: 10px;
+}
+main div.menu ul{
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+main div.menu ul li{
+    cursor: pointer;
+}
+main div.menu ul li:hover{
+    border-bottom: 2px solid #dfd4c8;
+}
+/* main div.menu ul li:nth-child(1){
+    border-bottom: 2px solid #dfd4c8;
+} */
