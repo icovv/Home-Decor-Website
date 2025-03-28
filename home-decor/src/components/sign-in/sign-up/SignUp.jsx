@@ -20,7 +20,7 @@ export default function SignUp() {
                     <input type="password" name="password" value={value.password || ''} onChange={changeHandler}></input>
                     <label>Repeat Password</label>
                     <input type="password" name="repass" value={value.repass || ''} onChange={changeHandler}></input>
-                    <input type="submit" defaultValue="Submit" />
+                    <button type="submit">Submit</button>
                 </form>
             </div>
             <div className={styles["no-acc-box"]}>

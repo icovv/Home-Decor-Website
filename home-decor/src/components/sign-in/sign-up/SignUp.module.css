@@ -51,19 +51,19 @@ main.sign-up {
     border-radius: 8px;
 }
 
-.register-form input[type="submit"] {
+button{
     width: 320px;
     height: 35px;
     margin-top: 30px;
+    border: none;
     background-color: #857776;
-    margin-left: 5px;
     color: white;
     font-size: 15px;
-    padding-left: 0px;
-    margin-left: 0px;
+    border: 1px solid gray;
+    border-radius: 8px;
 }
 
-input[type="submit"]:hover {
+button:hover {
     cursor: pointer;
     color: #dfd4c8;
 }
