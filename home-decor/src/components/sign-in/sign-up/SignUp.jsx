@@ -6,11 +6,11 @@ export default function SignUp() {
         <main className={styles["sign-up"]}>
             <div className={styles["register-form"]}>
                 <h1>Sign Up</h1>
-                <form action="#" method="">
+                <form>
                     <label>Email</label>
-                    <input type="text" name="" />
+                    <input type="text" name="email" />
                     <label>Password</label>
-                    <input type="password" name="" />
+                    <input type="password" name="password" />
                     <label>Repeat Password</label>
                     <input type="password" name="" />
                     <input type="submit" defaultValue="Submit" />

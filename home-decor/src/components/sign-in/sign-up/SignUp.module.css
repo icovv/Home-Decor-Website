@@ -59,6 +59,8 @@ main.sign-up {
     margin-left: 5px;
     color: white;
     font-size: 15px;
+    padding-left: 0px;
+    margin-left: 0px;
 }
 
 input[type="submit"]:hover {
