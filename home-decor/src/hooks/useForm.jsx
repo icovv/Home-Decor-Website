@@ -15,6 +15,6 @@ export default function useForm(initialValue){
         setValue(newValue)
     };
 
-    return(value,changeHandler,changeValues)
+    return{value,changeHandler,changeValues}
 
 }
