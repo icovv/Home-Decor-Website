@@ -9,11 +9,23 @@ export default function SignUp() {
         repass:''
     });
 
+    let submitHandler = async (e)=>{
+        e.preventDefault();
+        console.log(e.target.email.value, "This is the email")
+        console.log(e.target.password.value, "This is the pw")
+        try {
+            let response = await fetch("http://localhost:3000/register",{method: 'POST', headers:{'Content-Type':`application/json`}, body:JSON.stringify({email:e.target.email.value,password:e.target.password.value})});
+            console.log(await response.json());
+        } catch (error) {
+            console.log("This is the errorasdasd:",JSON.parse(error))
+        }
+    }
+
     return (
         <main className={styles["sign-up"]}>
             <div className={styles["register-form"]}>
                 <h1>Sign Up</h1>
-                <form>
+                <form onSubmit={submitHandler}>
                     <label>Email</label>
                     <input type="text" name="email" value={value.email || ''} onChange={changeHandler}></input>
                     <label>Password</label>
