@@ -21,6 +21,7 @@ import AdminList from './components/admin/admin-list/AdminList'
 import AdminCreate from './components/admin/admin-create/AdminCreate'
 import AdminEdit from './components/admin/admin-edit/AdminEdit'
 import { AuthProvider } from './contexts/AuthContext'
+import AuthGuard from './guards/AuthGuard'
 
 function App() {
   return (

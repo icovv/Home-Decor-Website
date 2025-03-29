@@ -8,8 +8,7 @@ export const AuthProvider = ({
     children
 }) => {
 
-    let {state, setLocalStorageState} = useLocalStorageState({})
-
+    let [state, setLocalStorageState] = useLocalStorageState({})
 
     let loginHandler = async(email,password) => {
         let data = await login(email,password);
@@ -41,10 +40,12 @@ export const AuthProvider = ({
         setLocalStorageState({});
         localStorage.clear();
     }
+    
     let values = {
         loginHandler,
         registerHandler,
-        logoutHandler
+        logoutHandler,
+        isAuthenticated: state.accessToken ? state.accessToken : false,
     }
 
     return(
@@ -53,3 +54,5 @@ export const AuthProvider = ({
         </AuthContext.Provider>
     )
 }
+
+export default AuthContext;
