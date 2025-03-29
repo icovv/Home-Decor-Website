@@ -20,10 +20,12 @@ import Admin from './components/admin/admin-header/Admin'
 import AdminList from './components/admin/admin-list/AdminList'
 import AdminCreate from './components/admin/admin-create/AdminCreate'
 import AdminEdit from './components/admin/admin-edit/AdminEdit'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
   return (
     <>
+      <AuthProvider>
       <Header></Header>
 
       <Routes>
@@ -49,6 +51,7 @@ function App() {
       </Routes>
       
       <Footer></Footer>
+      </AuthProvider>
     </>
   )
 }
