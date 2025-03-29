@@ -7,13 +7,17 @@ export default function AuthGuard({children}){
     let location = useLocation();
     
     if(location.pathname == "/sign-in" || location.pathname == "/sign-up"){
+
         if(isAuthenticated){
             return null
         }
-    }
+
+    } else{
 
     if(!isAuthenticated){
         return <Navigate to='/sign-in'></Navigate>
+    }
+    
     }
 
     return children

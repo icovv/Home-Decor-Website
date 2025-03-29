@@ -38,15 +38,15 @@ function App() {
         <Route path='/catalog-bedroom/:itemID' element={<BedroomDetails></BedroomDetails>}></Route>
         <Route path='/catalog-decor/:itemID' element={<DecorDetails></DecorDetails>}></Route>
         <Route path='/catalog-dining-room/:itemID' element={<DiningRoomDetails></DiningRoomDetails>}></Route>
-        <Route path='/profile/:userID' element={<Profile></Profile>}></Route>
-        <Route path='/sign-in' element={<SignIn></SignIn>}></Route>
-        <Route path='/sign-up' element={<SignUp></SignUp>}></Route>
+        <Route path='/profile/:userID' element={<AuthGuard><Profile></Profile></AuthGuard>}></Route>
+        <Route path='/sign-in' element={<AuthGuard><SignIn></SignIn></AuthGuard>}></Route>
+        <Route path='/sign-up' element={<AuthGuard><SignUp></SignUp></AuthGuard>}></Route>
         <Route path='/cart' element={<CartOverview></CartOverview>}></Route>
         <Route path='/cart/order' element={<OrderDetails></OrderDetails>}></Route>
-        <Route path='/admin' element={<Admin></Admin>}></Route>
-        <Route path='/admin/list' element={<AdminList></AdminList>}></Route>
-        <Route path='/admin/create' element={<AdminCreate></AdminCreate>}></Route>
-        <Route path='/admin/edit/:itemID' element={<AdminEdit></AdminEdit>}></Route>
+        <Route path='/admin' element={<AuthGuard><Admin></Admin></AuthGuard>}></Route>
+        <Route path='/admin/list' element={<AuthGuard><AdminList></AdminList></AuthGuard>}></Route>
+        <Route path='/admin/create' element={<AuthGuard><AdminCreate></AdminCreate></AuthGuard>}></Route>
+        <Route path='/admin/edit/:itemID' element={<AuthGuard><AdminEdit></AdminEdit></AuthGuard>}></Route>
 
         
       </Routes>
