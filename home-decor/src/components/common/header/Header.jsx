@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 import { useContext } from "react"
 import AuthContext from "../../../contexts/AuthContext"
+import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers"
 
 export default function Header(){
   let {isAuthenticated, isAdmin} = useContext(AuthContext)
-  console.log(isAuthenticated);
     return (
         <>
         <header className= {styles.visible}>
@@ -116,7 +116,7 @@ export default function Header(){
               <Link to='/profile/1'><i className="fa-regular fa-user" /></Link>
             </li>
             <li>
-              <i className="fa-solid fa-right-from-bracket" />
+             <Link to='/logout'><i className="fa-solid fa-right-from-bracket" /></Link>
             </li>
             </>
             :
@@ -166,7 +166,7 @@ export default function Header(){
           <Link to='/profile/1'>Profile</Link>
           </li>
           <li>
-            <a href="">Logout</a>
+            <Link to='/logout'>Logout</Link>
           </li>
           <li>
           <Link to='/admin'>Admin</Link>
@@ -190,7 +190,7 @@ export default function Header(){
         <Link to='/profile/1'>Profile</Link>
         </li>
         <li>
-          <a> Logout </a>
+          <Link to='/logout'> Logout </Link>
         </li>
       </ul>
         :

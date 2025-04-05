@@ -22,6 +22,7 @@ import AdminCreate from './components/admin/admin-create/AdminCreate'
 import AdminEdit from './components/admin/admin-edit/AdminEdit'
 import { AuthProvider } from './contexts/AuthContext'
 import AuthGuard from './guards/AuthGuard'
+import Logout from './components/common/logout/Logout'
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
         <Route path='/admin/list' element={<AuthGuard><AdminList></AdminList></AuthGuard>}></Route>
         <Route path='/admin/create' element={<AuthGuard><AdminCreate></AdminCreate></AuthGuard>}></Route>
         <Route path='/admin/edit/:itemID' element={<AuthGuard><AdminEdit></AdminEdit></AuthGuard>}></Route>
-
+        <Route path='/logout' element={<Logout></Logout>}></Route>
         
       </Routes>
       

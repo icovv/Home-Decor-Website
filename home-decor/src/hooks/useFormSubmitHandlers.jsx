@@ -63,13 +63,18 @@ export default function useFormSubmitHandlers(value, handler,changeValues){
             return
         }
 
+
+    }
+
+    let logoutSubmitHandler = async() => {
+
+        await handler();
         
-        
-        navigate('/')
     }
 
     return {
         loginSubmitHandler,
-        registerSubmitHandler
+        registerSubmitHandler,
+        logoutSubmitHandler
     }
 }
