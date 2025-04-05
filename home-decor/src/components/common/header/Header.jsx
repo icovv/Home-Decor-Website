@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
+import { useContext } from "react"
+import AuthContext from "../../../contexts/AuthContext"
 
 export default function Header(){
+  let {isAuthenticated} = useContext(AuthContext)
+  console.log(isAuthenticated);
     return (
         <>
         <header className= {styles.visible}>
@@ -9,7 +13,9 @@ export default function Header(){
       <div className={styles["left-side"]}>
         <Link to="/">Home Decor</Link>
         <nav className={styles.menu}>
-          <ul>
+            {isAuthenticated 
+            ?
+            <ul>
             <li>
               <Link to='/catalog-bedroom'>Bedroom</Link>
             </li>
@@ -20,12 +26,26 @@ export default function Header(){
             <Link to='/catalog-dining-room'>Dining Room</Link>
             </li>
             <li>
-              <Link to='/sign-in'>Sign In</Link>
+            <Link to='/admin'>Admin</Link>
             </li>
+            </ul>
+            :
+            <ul>
             <li>
-              <Link to='/admin'>Admin</Link>
-            </li>
+            <Link to='/catalog-bedroom'>Bedroom</Link>
+          </li>
+          <li>
+            <Link to='/catalog-decor'>Decor</Link>
+          </li>
+          <li>
+          <Link to='/catalog-dining-room'>Dining Room</Link>
+          </li>
+          <li>
+            <Link to='/sign-in'>Sign In</Link>
+          </li>
           </ul>
+            }
+
         </nav>
       </div>
       <div className={styles["right-side"]}>
@@ -75,12 +95,19 @@ export default function Header(){
               </div>
               </Link> 
             </li>
+            {isAuthenticated
+            ?
+            <>
             <li>
               <Link to='/profile/1'><i className="fa-regular fa-user" /></Link>
             </li>
             <li>
               <i className="fa-solid fa-right-from-bracket" />
             </li>
+            </>
+            :
+            <></>
+            }
           </ul>
         </nav>
       </div>
@@ -104,6 +131,8 @@ export default function Header(){
         </nav>
       </div>
       <nav className={styles.dropdown}>
+        {isAuthenticated
+        ?
         <ul>
           <li>
           <Link to='/catalog-bedroom'>Bedroom</Link>
@@ -121,15 +150,32 @@ export default function Header(){
           <Link to='/profile/1'>Profile</Link>
           </li>
           <li>
-          <Link to='/sign-in'>Sign In</Link>
-          </li>
-          <li>
             <a href="">Logout</a>
           </li>
           <li>
           <Link to='/admin'>Admin</Link>
           </li>
         </ul>
+        :
+        <ul>
+        <li>
+        <Link to='/catalog-bedroom'>Bedroom</Link>
+        </li>
+        <li>
+        <Link to='/catalog-decor'>Decor</Link>
+        </li>
+        <li>
+        <Link to='/catalog-dining-room'>Dining Room</Link>
+        </li>
+        <li>
+        <Link to='/cart'>Cart</Link>  
+        </li>
+        <li>
+        <Link to='/sign-in'>Sign In</Link>
+        </li>
+      </ul>
+        }
+        
       </nav>
     </div>
   </header>
