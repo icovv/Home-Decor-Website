@@ -62,7 +62,8 @@ export default function useFormSubmitHandlers(value, handler,changeValues){
             changeValues({email: value.email, password: ""});
             return
         }
-
+        
+        navigate('/')
 
     }
 
