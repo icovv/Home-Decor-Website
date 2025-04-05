@@ -12,7 +12,7 @@ export const AuthProvider = ({
 
     let loginHandler = async(email,password) => {
         let data = await login(email,password);
-
+        console.log(data)
         if(data.message){
             return data;
         }
