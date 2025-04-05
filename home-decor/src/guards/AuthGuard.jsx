@@ -14,6 +14,11 @@ export default function AuthGuard({children}){
     
     }
     
+    if(location.pathname == "/logout" && !isAuthenticated){
+        console.log('cannot logout when you are not logged in')
+        return null //add error page
+    }
+
     if(location.pathname == "/sign-in" || location.pathname == "/sign-up"){
 
         if(isAuthenticated){

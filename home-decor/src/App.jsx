@@ -48,7 +48,7 @@ function App() {
         <Route path='/admin/list' element={<AuthGuard><AdminList></AdminList></AuthGuard>}></Route>
         <Route path='/admin/create' element={<AuthGuard><AdminCreate></AdminCreate></AuthGuard>}></Route>
         <Route path='/admin/edit/:itemID' element={<AuthGuard><AdminEdit></AdminEdit></AuthGuard>}></Route>
-        <Route path='/logout' element={<Logout></Logout>}></Route>
+        <Route path='/logout' element={<AuthGuard><Logout></Logout></AuthGuard>}></Route>
         
       </Routes>
       
