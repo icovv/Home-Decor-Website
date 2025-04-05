@@ -6,11 +6,14 @@ import AuthContext from "../../contexts/AuthContext";
 import useFormSubmitHandlers from "../../hooks/useFormSubmitHandlers";
 
 export default function SignIn() {
+
     let {loginHandler} = useContext(AuthContext);
+    
     let {value,changeHandler,changeValues} = useForm({
         email:'',
         password:'',
     });
+    
     let {loginSubmitHandler} = useFormSubmitHandlers(value,loginHandler,changeValues);
 
     return (
