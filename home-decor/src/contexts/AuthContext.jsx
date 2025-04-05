@@ -45,6 +45,7 @@ export const AuthProvider = ({
         loginHandler,
         registerHandler,
         logoutHandler,
+        isAdmin: state.admin ? !!state.admin : false,
         isAuthenticated: state.accessToken ? !!state.accessToken : false,
     }
 

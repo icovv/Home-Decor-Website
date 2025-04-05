@@ -63,6 +63,8 @@ export default function useFormSubmitHandlers(value, handler,changeValues){
             return
         }
 
+        
+        
         navigate('/')
     }
 

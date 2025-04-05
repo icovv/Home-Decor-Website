@@ -4,7 +4,7 @@ import { useContext } from "react"
 import AuthContext from "../../../contexts/AuthContext"
 
 export default function Header(){
-  let {isAuthenticated} = useContext(AuthContext)
+  let {isAuthenticated, isAdmin} = useContext(AuthContext)
   console.log(isAuthenticated);
     return (
         <>
@@ -14,6 +14,8 @@ export default function Header(){
         <Link to="/">Home Decor</Link>
         <nav className={styles.menu}>
             {isAuthenticated 
+            ?
+            isAdmin 
             ?
             <ul>
             <li>
@@ -27,6 +29,18 @@ export default function Header(){
             </li>
             <li>
             <Link to='/admin'>Admin</Link>
+            </li>
+            </ul>
+            :
+            <ul>
+            <li>
+              <Link to='/catalog-bedroom'>Bedroom</Link>
+            </li>
+            <li>
+              <Link to='/catalog-decor'>Decor</Link>
+            </li>
+            <li>
+            <Link to='/catalog-dining-room'>Dining Room</Link>
             </li>
             </ul>
             :
@@ -133,6 +147,8 @@ export default function Header(){
       <nav className={styles.dropdown}>
         {isAuthenticated
         ?
+        isAdmin
+        ?
         <ul>
           <li>
           <Link to='/catalog-bedroom'>Bedroom</Link>
@@ -156,6 +172,27 @@ export default function Header(){
           <Link to='/admin'>Admin</Link>
           </li>
         </ul>
+        :
+        <ul>
+        <li>
+        <Link to='/catalog-bedroom'>Bedroom</Link>
+        </li>
+        <li>
+        <Link to='/catalog-decor'>Decor</Link>
+        </li>
+        <li>
+        <Link to='/catalog-dining-room'>Dining Room</Link>
+        </li>
+        <li>
+        <Link to='/cart'>Cart</Link>  
+        </li>
+        <li>
+        <Link to='/profile/1'>Profile</Link>
+        </li>
+        <li>
+          <a> Logout </a>
+        </li>
+      </ul>
         :
         <ul>
         <li>
