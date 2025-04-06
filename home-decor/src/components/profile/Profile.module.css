@@ -62,4 +62,5 @@ main div.container div.bottom-side form > button.button{
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    width: 100%;
 }
