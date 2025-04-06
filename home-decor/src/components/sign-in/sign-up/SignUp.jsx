@@ -23,11 +23,11 @@ export default function SignUp() {
                 <h1>Sign Up</h1>
                 <form onSubmit={registerSubmitHandler}>
                     <label>Email</label>
-                    <input type="text" name="email" value={value.email || ''} onChange={changeHandler}></input>
+                    <input type="text" name="email" id="email" value={value.email || ''} onChange={changeHandler}></input>
                     <label>Password</label>
-                    <input type="password" name="password" value={value.password || ''} onChange={changeHandler}></input>
+                    <input type="password" name="password" id="password" value={value.password || ''} onChange={changeHandler}></input>
                     <label>Repeat Password</label>
-                    <input type="password" name="repass" value={value.repass || ''} onChange={changeHandler}></input>
+                    <input type="password" name="repass" id="repass" value={value.repass || ''} onChange={changeHandler}></input>
                     <button type="submit">Submit</button>
                 </form>
             </div>
