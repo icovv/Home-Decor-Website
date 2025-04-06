@@ -22,9 +22,9 @@ export default function SignIn() {
                 <h1>Sign in</h1>
                 <form className={styles.login} onSubmit={loginSubmitHandler}>
                     <label>Email</label>
-                    <input type="text" name="email" value={value.email || ''} onChange={changeHandler}/>
+                    <input type="text" name="email" id="email" value={value.email || ''} onChange={changeHandler}/>
                     <label>Password</label>
-                    <input type="password" name="password" value={value.password || ''} onChange={changeHandler} />
+                    <input type="password" name="password" id="password" value={value.password || ''} onChange={changeHandler} />
                     <button type="submit">Submit</button>
                 </form>
             </div>
