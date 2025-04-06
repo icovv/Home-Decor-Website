@@ -5,7 +5,7 @@ import AuthContext from "../../../contexts/AuthContext"
 import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers"
 
 export default function Header(){
-  let {isAuthenticated, isAdmin} = useContext(AuthContext)
+  let {isAuthenticated, isAdmin, userID} = useContext(AuthContext)
     return (
         <>
         <header className= {styles.visible}>
@@ -113,7 +113,7 @@ export default function Header(){
             ?
             <>
             <li>
-              <Link to='/profile/1'><i className="fa-regular fa-user" /></Link>
+              <Link to={`/profile/${userID}`}><i className="fa-regular fa-user" /></Link>
             </li>
             <li>
              <Link to='/logout'><i className="fa-solid fa-right-from-bracket" /></Link>
@@ -163,7 +163,7 @@ export default function Header(){
           <Link to='/cart'>Cart</Link>  
           </li>
           <li>
-          <Link to='/profile/1'>Profile</Link>
+          <Link to={`/profile/${userID}`}>Profile</Link>
           </li>
           <li>
             <Link to='/logout'>Logout</Link>

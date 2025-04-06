@@ -2,14 +2,16 @@ import useForm from "../../hooks/useForm"
 import styles from "./Profile.module.css"
 
 export default function Profile(){
-    let {} = useForm({
+    let {value,changeValues,changeHandler} = useForm({
       email:"",
       name: "",
       password: "",
       town: "",
-
+      streetName: "",
+      streetNumber: "",
+      tel: ""
     })
-
+    
     return(
         <main>
   <div className={styles.container}>
