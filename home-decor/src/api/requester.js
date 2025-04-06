@@ -13,7 +13,7 @@ export async function requester(method,url,data){
     if (user){
         options.headers["X-Authorization"] = user.accessToken;
     }
-
+    
     try {
         let response = await fetch(url,options);
         if (!response.ok){

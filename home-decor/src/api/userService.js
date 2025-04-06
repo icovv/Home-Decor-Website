@@ -16,3 +16,7 @@ export async function logout() {
 export async function changeProfileData(params) {
     
 }
+
+export async function getProfileData(id){
+    return await get(`http://localhost:3000/profile/${id}`)
+}

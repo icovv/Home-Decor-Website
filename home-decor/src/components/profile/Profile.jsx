@@ -1,7 +1,11 @@
+import { useParams } from "react-router-dom"
 import useForm from "../../hooks/useForm"
 import styles from "./Profile.module.css"
+import useProfileGetData from "./useProfileGetData"
 
 export default function Profile(){
+    let {userID} = useParams();
+
     let {value,changeValues,changeHandler} = useForm({
       email:"",
       name: "",
@@ -11,6 +15,8 @@ export default function Profile(){
       streetNumber: "",
       tel: ""
     })
+
+    useProfileGetData(userID, changeValues) 
     
     return(
         <main>
@@ -25,31 +31,31 @@ export default function Profile(){
       <form>
         <div className={styles.section}>
           <label htmlFor="email">Email</label>
-          <input type="text" name="email" id="email" />
+          <input type="text" name="email" id="email" value={value.email || ""} onChange={changeHandler} />
         </div>
         <div className={styles.section}>
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" value={value.name || ""} onChange={changeHandler} />
         </div>
         <div className={styles.section}>
           <label htmlFor="password">Password</label>
-          <input type="text" name="password" id="password" />
+          <input type="text" name="password" id="password" value={value.password || ""} onChange={changeHandler} />
         </div>
         <div className={styles.section}>
           <label htmlFor="town">Town</label>
-          <input type="text" name="town" id="town" />
+          <input type="text" name="town" id="town" value={value.town || ""} onChange={changeHandler} />
         </div>
         <div className={styles.section}>
           <label htmlFor="streetName">Street Name</label>
-          <input type="text" name="streetName" id="streetName" />
+          <input type="text" name="streetName" id="streetName" value={value.streetName || ""} onChange={changeHandler} />
         </div>
         <div className={styles.section}>
           <label htmlFor="streetNumber">Street Number</label>
-          <input type="number" name="streetNumber" id="streetNumber" />
+          <input type="number" name="streetNumber" id="streetNumber"  value={value.streetNumber || ""} onChange={changeHandler}/>
         </div>
         <div className={styles.section}>
           <label htmlFor="tel">Phone Number</label>
-          <input type="tel" name="tel" id="tel"/>
+          <input type="tel" name="tel" id="tel" value={value.tel || ""} onChange={changeHandler}/>
         </div>
         <button type="submit" className={styles.button}>
           Save
