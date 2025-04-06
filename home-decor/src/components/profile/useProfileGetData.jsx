@@ -11,12 +11,12 @@ export default function useProfileGetData(id, changeValues){
             let data = await getProfileData(id);
             if(data.code == 404){
                 navigate('/') // add error page;
+                console.log(data.message);
                 return;
             }
             changeValues({
                 email: data.email,
                 name: data.name,
-                password: "",
                 town: data.town,
                 streetName: data.streetName,
                 streetNumber: data.streetNumber,

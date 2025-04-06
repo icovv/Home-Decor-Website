@@ -9,7 +9,6 @@ export default function Profile(){
     let {value,changeValues,changeHandler} = useForm({
       email:"",
       name: "",
-      password: "",
       town: "",
       streetName: "",
       streetNumber: "",
@@ -29,18 +28,17 @@ export default function Profile(){
     </div>
     <div className={styles["bottom-side"]}>
       <form>
-        <div className={styles.section}>
-          <label htmlFor="email">Email</label>
-          <input type="text" name="email" id="email" value={value.email || ""} onChange={changeHandler} />
+        <div className={`${styles.section} ${styles["first-label"]}`}>
+          <label htmlFor="email">{value.email}</label>
         </div>
         <div className={styles.section}>
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" value={value.name || ""} onChange={changeHandler} />
         </div>
-        <div className={styles.section}>
+        {/* <div className={styles.section}>
           <label htmlFor="password">Password</label>
           <input type="text" name="password" id="password" value={value.password || ""} onChange={changeHandler} />
-        </div>
+        </div> */}
         <div className={styles.section}>
           <label htmlFor="town">Town</label>
           <input type="text" name="town" id="town" value={value.town || ""} onChange={changeHandler} />
