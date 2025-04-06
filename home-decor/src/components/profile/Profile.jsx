@@ -29,7 +29,7 @@ export default function Profile(){
     <div className={styles["bottom-side"]}>
       <form>
         <div className={`${styles.section} ${styles["first-label"]}`}>
-          <label htmlFor="email">{value.email}</label>
+          <label>{value.email}</label>
         </div>
         <div className={styles.section}>
           <label htmlFor="name">Name</label>
