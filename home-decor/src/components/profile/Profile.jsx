@@ -2,9 +2,14 @@ import { useParams } from "react-router-dom"
 import useForm from "../../hooks/useForm"
 import styles from "./Profile.module.css"
 import useProfileGetData from "./useProfileGetData"
+import { useContext } from "react";
+import AuthContext from "../../contexts/AuthContext";
+import useFormSubmitHandlers from "../../hooks/useFormSubmitHandlers";
 
 export default function Profile(){
     let {userID} = useParams();
+
+    let {changeProfileDataHandler} = useContext(AuthContext)
 
     let {value,changeValues,changeHandler} = useForm({
       email:"",
@@ -17,6 +22,8 @@ export default function Profile(){
 
     useProfileGetData(userID, changeValues) 
     
+    let {changeProfileDataSubmitHandler} = useFormSubmitHandlers(value,changeProfileDataHandler,changeValues,userID)
+
     return(
         <main>
   <div className={styles.container}>
@@ -27,7 +34,7 @@ export default function Profile(){
       />
     </div>
     <div className={styles["bottom-side"]}>
-      <form>
+      <form onSubmit={changeProfileDataSubmitHandler}>
         <div className={`${styles.section} ${styles["first-label"]}`}>
           <label>{value.email}</label>
         </div>

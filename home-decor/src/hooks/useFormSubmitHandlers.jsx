@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function useFormSubmitHandlers(value, handler,changeValues){
+export default function useFormSubmitHandlers(value, handler,changeValues,userID){
 
     let navigate = useNavigate();
 
@@ -73,10 +73,37 @@ export default function useFormSubmitHandlers(value, handler,changeValues){
         
     }
 
+    let changeProfileDataSubmitHandler = async(e) => {
+        
+        e.preventDefault();
+
+        let initValue = value;
+
+        let {name,town,streetName,streetNumber,tel} = value;
+        console.log(typeof streetNumber);
+        if(name.trim() == "" || town.trim() == "" || streetName.trim() == "", streetNumber.toString().trim() == "", tel.toString().trim() == 0){
+            console.log("All fields are required!"); // add error handling;
+            return;
+        }
+
+        //add validation
+
+        let result = await handler(userID, name,town,streetName,streetNumber,tel);
+
+        if(result.message){
+            result.message.forEach(x => console.log(x)); // add error handling
+            changeValues(initValue);
+            return
+        }
+
+        navigate('/')
+    }
+
 
     return {
         loginSubmitHandler,
         registerSubmitHandler,
-        logoutSubmitHandler
+        logoutSubmitHandler,
+        changeProfileDataSubmitHandler
     }
 }
