@@ -13,8 +13,8 @@ export async function logout() {
     return await get("http://localhost:3000/logout");
 }
 
-export async function changeProfileData(params) {
-    
+export async function changeProfileData(id,name,town,streetName,streetNumber,tel) {
+    return await put(`http://localhost:3000/profile/${id}`,{name,town,streetName,streetNumber,tel});
 }
 
 export async function getProfileData(id){
