@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import useLocalStorageState from "../hooks/useLocalStorage";
-import { login, logout, register } from "../api/userService";
+import { changeProfileData, login, logout, register } from "../api/userService";
 
 let AuthContext = createContext();
 
@@ -40,11 +40,24 @@ export const AuthProvider = ({
         setLocalStorageState({});
         localStorage.clear();
     }
+
+    let changeProfileDataHandler = async(id, name,town,streetName,streetNumber,tel) => {
+        let data = await changeProfileData(id,name,town,streetName,streetNumber,tel);
+
+        if(data.message){
+            return data;
+        }
+
+        setLocalStorageState(data);
+
+        return data;
+    }
     
     let values = {
         loginHandler,
         registerHandler,
         logoutHandler,
+        changeProfileDataHandler,
         accessToken: state.accessToken ? state.accessToken : false,
         userID: state._id ? state._id : false,
         isAdmin: state.admin ? !!state.admin : false,
