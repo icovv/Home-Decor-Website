@@ -4,6 +4,7 @@ import useForm from "../../hooks/useForm"
 import { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import useFormSubmitHandlers from "../../hooks/useFormSubmitHandlers";
+import Error from "../common/errors/Error";
 
 export default function SignIn() {
 
@@ -14,10 +15,16 @@ export default function SignIn() {
         password:'',
     });
     
-    let {loginSubmitHandler} = useFormSubmitHandlers(value,loginHandler,changeValues);
-
+    let {loginSubmitHandler,err,divKill} = useFormSubmitHandlers(value,loginHandler,changeValues);
+    
     return (
         <main className={styles.signIn}>
+            {err.length > 0
+                ?
+                <Error err={err} divKill={divKill}></Error>
+                :
+                <></>
+            }
             <div className={styles["login-form"]}>
                 <h1>Sign in</h1>
                 <form className={styles.login} onSubmit={loginSubmitHandler}>
