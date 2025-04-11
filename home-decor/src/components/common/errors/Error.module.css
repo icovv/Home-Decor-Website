@@ -17,10 +17,32 @@
   .error-container {
     position: fixed;
     top: 3em;
-    right: 50em;
+    right: 42%;
     width: 300px;
-    z-index: 1000;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
   }
+
+  @media (max-width: 1300px){
+    .error-container {
+        right: 38%;
+      }
+  }
+      
+  @media (max-width: 1600px){
+    .error-container {
+        right: 40%;
+      }
+    }
+  @media (max-width: 1100px){
+    .error-container {
+        right: 36%;
+      }
+    }
+  @media (max-width: 700px){
+    .error-container {
+        right: 28%;
+      }
+    }
