@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function useFormSubmitHandlers(value, handler,changeValues,userID){
-
+    let [err,setErr] = useState([]);
     let navigate = useNavigate();
 
     let loginSubmitHandler = async(e) => {
@@ -24,7 +25,9 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         let result = await handler(email,password);
 
         if(result.message){
-            result.message.forEach(x => console.log(x)); // add error handling
+            let errMsg = [];
+            result.message.forEach(x => errMsg.push({message:`${x}`})); // add error handling
+            setErr(errMsg);
             changeValues({email: value.email, password: ""});
             return
         }
@@ -38,17 +41,17 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         console.log(value);
 
-        if(value.email.trim() == "" || value.password.trim() == "" || value.repass.trim() == ""){
-            changeValues({email: value.email, password: "", repass: ""});
-            console.log("All fields are required!"); // add error handling
-            return;
-        }
+        // if(value.email.trim() == "" || value.password.trim() == "" || value.repass.trim() == ""){
+        //     changeValues({email: value.email, password: "", repass: ""});
+        //     console.log("All fields are required!"); // add error handling
+        //     return;
+        // }
 
-        if(value.password != value.repass){
-            changeValues({email: value.email, password: "", repass: ""});
-            console.log("Password must match!"); // add error handling
-            return;
-        }
+        // if(value.password != value.repass){
+        //     changeValues({email: value.email, password: "", repass: ""});
+        //     console.log("Password must match!"); // add error handling
+        //     return;
+        // }
 
         let {email,password} = value;
 
@@ -58,7 +61,9 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         let result = await handler(email,password);
 
         if(result.message){
-            result.message.forEach(x => console.log(x)); // add error handling
+            let errMsg = [];
+            result.message.forEach(x => errMsg.push({message:`${x}`})); // add error handling
+            setErr(errMsg);
             changeValues({email: value.email, password: ""});
             return
         }
@@ -80,18 +85,23 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         let initValue = value;
 
         let {name,town,streetName,streetNumber,tel} = value;
-        console.log(typeof streetNumber);
+        if(tel.toString().trim() == ""){
+            tel = 0;
+        }
+        console.log(tel);
         if(name.trim() == "" || town.trim() == "" || streetName.trim() == "", streetNumber.toString().trim() == "", tel.toString().trim() == 0){
             console.log("All fields are required!"); // add error handling;
             return;
         }
 
-        //add validation
+        // add validation
 
         let result = await handler(userID, name,town,streetName,streetNumber,tel);
 
         if(result.message){
-            result.message.forEach(x => console.log(x)); // add error handling
+            let errMsg = [];
+            result.message.forEach(x => errMsg.push({message:`${x}`})); // add error handling
+            setErr(errMsg);
             changeValues(initValue);
             return
         }
@@ -99,8 +109,13 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         navigate('/')
     }
 
+    let divKill = () => {
+        setErr([]);
+    }
 
     return {
+        err,
+        divKill,
         loginSubmitHandler,
         registerSubmitHandler,
         logoutSubmitHandler,
