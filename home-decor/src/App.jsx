@@ -23,6 +23,7 @@ import AdminEdit from './components/admin/admin-edit/AdminEdit'
 import { AuthProvider } from './contexts/AuthContext'
 import AuthGuard from './guards/AuthGuard'
 import Logout from './components/common/logout/Logout'
+import NotFound from './components/common/notFound/NotFound'
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path='/admin/edit/:itemID' element={<AuthGuard><AdminEdit></AdminEdit></AuthGuard>}></Route>
         <Route path='/logout' element={<AuthGuard><Logout></Logout></AuthGuard>}></Route>
         
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       
       <Footer></Footer>
