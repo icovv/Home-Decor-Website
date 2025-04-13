@@ -86,10 +86,11 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         if(errors.length > 0){
             if(errors[0].message == "Something went wrong, please log into your account!"){
-                navigate('/')
+                setErr(errors);
                 console.log(errors);
                 return; 
-                // add 404 error page and change the navigation from here
+                // add 404 error page and change the navigation from here also remove the local Storage in order to reroute the user and also change
+                // the header
             }
             changeValues(initValue);
             setErr(errors);

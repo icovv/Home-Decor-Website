@@ -5,6 +5,7 @@ import useProfileGetData from "./useProfileGetData"
 import { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import useFormSubmitHandlers from "../../hooks/useFormSubmitHandlers";
+import Error from "../common/errors/Error";
 
 export default function Profile(){
     let {userID} = useParams();
@@ -22,10 +23,15 @@ export default function Profile(){
 
     useProfileGetData(userID, changeValues) 
     
-    let {changeProfileDataSubmitHandler} = useFormSubmitHandlers(value,changeProfileDataHandler,changeValues,userID)
+    let {changeProfileDataSubmitHandler, err, divKill} = useFormSubmitHandlers(value,changeProfileDataHandler,changeValues,userID)
 
     return(
         <main>
+          {err.length > 0
+          ?
+          <Error err={err} divKill={divKill}></Error>
+          :
+          <></>}
   <div className={styles.container}>
     <div className={styles["top-side"]}>
       <img
