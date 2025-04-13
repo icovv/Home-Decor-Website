@@ -60,7 +60,7 @@ export default function Profile(){
         </div>
         <div className={styles.section}>
           <label htmlFor="tel">Phone Number</label>
-          <input type="tel" name="tel" id="tel" value={value.tel || ""} onChange={changeHandler}/>
+          <input type="number" name="tel" id="tel" value={value.tel || ""} onChange={changeHandler}/>
         </div>
         <button type="submit" className={styles.button}>
           Save

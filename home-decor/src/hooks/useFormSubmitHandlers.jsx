@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
+import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
 
 export default function useFormSubmitHandlers(value, handler,changeValues,userID){
     let [err,setErr] = useState([]);
@@ -77,12 +78,33 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         
         e.preventDefault();
 
+        let {name,town,streetName,streetNumber,tel} = value;
+
         let initValue = value;
-        if(value.tel.toString().trim() == ""){
+
+        let errors = changeProfileDataErrorHandler(value);
+
+        if(errors.length > 0){
+            if(errors[0].message == "Something went wrong, please log into your account!"){
+                navigate('/')
+                console.log(errors);
+                return; 
+                // add 404 error page and change the navigation from here
+            }
+            changeValues(initValue);
+            setErr(errors);
+            console.log(errors);
+            return;
+        }
+        
+        if(tel.toString().trim() == ""){
             tel = 0;
         }
 
-        
+        name = name.trim();
+        town = town.trim();
+        streetName = streetName.trim();
+
         // add validation
 
         let result = await handler(userID, name,town,streetName,streetNumber,tel);
