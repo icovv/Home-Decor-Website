@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AuthContext from "../contexts/AuthContext";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 export default function AuthGuard({children}){
     let {isAuthenticated, isAdmin} = useContext(AuthContext);
@@ -9,27 +9,29 @@ export default function AuthGuard({children}){
     if(location.pathname =='/admin'){
         
         if(!isAdmin){
-            return null // add error page
+            let errors = [{message:"Unauthorized request!"}]
+            return <Navigate to='/*' state={{errors}}></Navigate>
         }
     
     }
     
     if(location.pathname == "/logout" && !isAuthenticated){
-        console.log('cannot logout when you are not logged in')
-        return null //add error page
+        let errors = [{message:"Unauthorized request!"}]
+        return <Navigate to='/*' state={{errors}}></Navigate>
     }
 
     if(location.pathname == "/sign-in" || location.pathname == "/sign-up"){
 
         if(isAuthenticated){
-            return null // add error page
+                let errors = [{message:"Unauthorized request!"}]
+                return <Navigate to='/*' state={{errors}}></Navigate>
         }
 
     } else{
 
-    if(!isAuthenticated){
+        if(!isAuthenticated){
         return <Navigate to='/sign-in'></Navigate>
-    }
+        }
     
     }
 

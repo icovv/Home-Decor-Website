@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
 import useLocalStorageState from "./useLocalStorage";
@@ -34,7 +34,6 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
             changeValues({email: value.email, password: ""});
             return
         }
-
         navigate('/')
     }
 
@@ -65,7 +64,8 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
             return
         }
         
-        navigate('/')
+        navigate('/');
+
 
     }
 
@@ -118,7 +118,8 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
             return
         }
 
-        navigate('/')
+        navigate('/');
+
     }
 
     let divKill = () => {
