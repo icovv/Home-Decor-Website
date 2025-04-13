@@ -39,6 +39,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
     let registerSubmitHandler = async(e) => {
         
         e.preventDefault();
+        
         let errors = registerErrorHandler(value);
         
         if(errors.length > 0){
@@ -77,17 +78,11 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         e.preventDefault();
 
         let initValue = value;
-
-        let {name,town,streetName,streetNumber,tel} = value;
-        if(tel.toString().trim() == ""){
+        if(value.tel.toString().trim() == ""){
             tel = 0;
         }
-        console.log(tel);
-        if(name.trim() == "" || town.trim() == "" || streetName.trim() == "", streetNumber.toString().trim() == "", tel.toString().trim() == 0){
-            console.log("All fields are required!"); // add error handling;
-            return;
-        }
 
+        
         // add validation
 
         let result = await handler(userID, name,town,streetName,streetNumber,tel);
