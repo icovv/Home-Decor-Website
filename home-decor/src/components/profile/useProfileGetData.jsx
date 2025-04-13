@@ -10,7 +10,8 @@ export default function useProfileGetData(id, changeValues){
             console.log(id);
             let data = await getProfileData(id);
             if(data.code == 404){
-                navigate('/') // add error page;
+                let err = [{message: data.message}]
+                navigate('*',{state: {errors: err} })
                 console.log(data.message);
                 return;
             }
