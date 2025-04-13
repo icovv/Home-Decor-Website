@@ -7,7 +7,7 @@ export default function NotFound() {
     console.log(errors);
     return (
         <main className={styles["not-found"]}>
-            {errors.length > 0
+            {errors?.length > 0
             ?
             <Error err={errors}></Error>
             :

@@ -12,6 +12,11 @@ export default function useLocalStorageState(initValue){
     })
 
     let setLocalStorageState = (value) => {
+        if(value == "delete"){
+            localStorage.removeItem(key);
+            setState({});
+            return;
+        }
         setState(value)
 
         localStorage.setItem(key,JSON.stringify(value));

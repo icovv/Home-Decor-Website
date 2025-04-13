@@ -37,8 +37,7 @@ export const AuthProvider = ({
     let logoutHandler = async() => {
         await logout();
 
-        setLocalStorageState({});
-        localStorage.clear();
+        setLocalStorageState("delete");
     }
 
     let changeProfileDataHandler = async(id, name,town,streetName,streetNumber,tel) => {
@@ -58,6 +57,7 @@ export const AuthProvider = ({
         registerHandler,
         logoutHandler,
         changeProfileDataHandler,
+        setLocalStorageState,
         accessToken: state.accessToken ? state.accessToken : false,
         userID: state._id ? state._id : false,
         isAdmin: state.admin ? !!state.admin : false,

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
+import useLocalStorageState from "./useLocalStorage";
 
-export default function useFormSubmitHandlers(value, handler,changeValues,userID){
+export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState){
     let [err,setErr] = useState([]);
     let navigate = useNavigate();
 
@@ -87,10 +88,9 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         if(errors.length > 0){
             if(errors[0].message == "Something went wrong, please log into your account!"){
                 setErr(errors);
-                console.log(errors);
+                navigate('/*',{state:{errors:errors}})
+                setLocalStorageState("delete");
                 return; 
-                // add 404 error page and change the navigation from here also remove the local Storage in order to reroute the user and also change
-                // the header
             }
             changeValues(initValue);
             setErr(errors);

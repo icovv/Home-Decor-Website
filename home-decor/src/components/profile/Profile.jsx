@@ -10,7 +10,7 @@ import Error from "../common/errors/Error";
 export default function Profile(){
     let {userID} = useParams();
 
-    let {changeProfileDataHandler} = useContext(AuthContext)
+    let {changeProfileDataHandler,setLocalStorageState} = useContext(AuthContext)
 
     let {value,changeValues,changeHandler} = useForm({
       email:"",
@@ -23,7 +23,7 @@ export default function Profile(){
 
     useProfileGetData(userID, changeValues) 
     
-    let {changeProfileDataSubmitHandler, err, divKill} = useFormSubmitHandlers(value,changeProfileDataHandler,changeValues,userID)
+    let {changeProfileDataSubmitHandler, err, divKill} = useFormSubmitHandlers(value,changeProfileDataHandler,changeValues,userID,setLocalStorageState)
 
     return(
         <main>
