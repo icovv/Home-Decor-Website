@@ -4,6 +4,7 @@ import useForm from "../../../hooks/useForm"
 import { useContext } from "react";
 import AuthContext from "../../../contexts/AuthContext";
 import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers";
+import Error from "../../common/errors/Error";
 
 export default function SignUp() {
     
@@ -15,10 +16,15 @@ export default function SignUp() {
         repass:''
     });
 
-    let {registerSubmitHandler} = useFormSubmitHandlers(value, registerHandler, changeValues);
+    let {registerSubmitHandler,err,divKill} = useFormSubmitHandlers(value, registerHandler, changeValues);
 
     return (
         <main className={styles["sign-up"]}>
+            {err.length > 0 
+            ?
+            <Error err={err} divKill={divKill}></Error>
+            :
+            <></>}
             <div className={styles["register-form"]}>
                 <h1>Sign Up</h1>
                 <form onSubmit={registerSubmitHandler}>

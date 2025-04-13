@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import registerErrorHandler from "../utils/registerErrorHandler";
 
 export default function useFormSubmitHandlers(value, handler,changeValues,userID){
     let [err,setErr] = useState([]);
@@ -38,18 +39,11 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
     let registerSubmitHandler = async(e) => {
         
         e.preventDefault();
-
-        console.log(value);
-
-        if(value.email.trim() == "" || value.password.trim() == "" || value.repass.trim() == ""){
+        let errors = registerErrorHandler(value);
+        
+        if(errors.length > 0){
             changeValues({email: value.email, password: "", repass: ""});
-            setErr([{message:"All fields are required!"}])
-            return;
-        }
-
-        if(value.password != value.repass){
-            changeValues({email: value.email, password: "", repass: ""});
-            setErr([{message:"Password must match!"}]) // add error handling
+            setErr(errors);
             return;
         }
 
