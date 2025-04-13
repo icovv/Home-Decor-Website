@@ -1,6 +1,6 @@
 .error-message {
     display: block;
-    animation: cssAnimation 0s ease-in 3s forwards;
+    animation: cssAnimation 0s ease-in 60s forwards;
     background-color: #ff4c4c;
     color: white;
     padding: 1em;
@@ -17,32 +17,44 @@
   .error-container {
     position: fixed;
     top: 3em;
-    right: 42%;
-    width: 300px;
+    right: 39vw;
+    width: 400px;
     z-index: 9999;
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 0.5em;
+  }
+
+  @media (min-width:1300px) and (max-width:1600px){
+    .error-container {
+      right: 36%;
+      }
   }
 
   @media (max-width: 1300px){
     .error-container {
-        right: 38%;
-      }
-  }
-      
-  @media (max-width: 1600px){
-    .error-container {
-        right: 40%;
+      right: 35%;
       }
     }
+
   @media (max-width: 1100px){
     .error-container {
-        right: 36%;
+        right: 31%;
+      }
+    }
+  @media (max-width: 900px){
+    .error-container {
+        right: 27%;
       }
     }
   @media (max-width: 700px){
     .error-container {
-        right: 28%;
+        right: 20%;
+      }
+    }
+  @media (max-width: 600px){
+    .error-container {
+        right: 15%;
       }
     }

@@ -187,7 +187,7 @@ export default function Header(){
         <Link to='/cart'>Cart</Link>  
         </li>
         <li>
-        <Link to='/profile/1'>Profile</Link>
+        <Link to={`/profile/${userID}`}>Profile</Link>
         </li>
         <li>
           <Link to='/logout'> Logout </Link>

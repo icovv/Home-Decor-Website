@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AuthContext from "../contexts/AuthContext";
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, } from "react-router-dom";
 
 export default function AuthGuard({children}){
     let {isAuthenticated, isAdmin} = useContext(AuthContext);

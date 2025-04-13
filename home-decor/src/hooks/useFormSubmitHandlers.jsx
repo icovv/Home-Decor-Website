@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
-import useLocalStorageState from "./useLocalStorage";
 
 export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState){
     let [err,setErr] = useState([]);
@@ -89,7 +88,9 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
             if(errors[0].message == "Something went wrong, please log into your account!"){
                 setErr(errors);
                 navigate('/*',{state:{errors:errors}})
-                setLocalStorageState("delete");
+                setTimeout(() => {
+                    setLocalStorageState("delete");
+                },30);
                 return; 
             }
             changeValues(initValue);
