@@ -1,8 +1,30 @@
 import { Link } from "react-router-dom"
 import styles from "./AdminList.module.css"
 import AdminSingleItem from "./admin-single-item/AdminSingleItem"
+import { useEffect, useState } from "react"
 
 export default function AdminList() {
+
+    let [Items,setItems] = useState(null);
+    let [image,setImg] = useState(null);
+    useEffect(() => {
+        async function getData() {
+            try {
+                let response = await fetch('http://localhost:3000/bedroom',{
+                    method:"GET"
+                });
+                let result = await response.json();
+                setItems(result.items)
+                
+                setImg(`data:${result.items[0].contentType};base64,${result.items[0].picture}`)
+            } catch (error) {
+                console.log(error)
+            }
+
+        }
+        getData()
+    },[])
+
     return (
         <main>
         <div className={styles.menu}>
@@ -23,7 +45,7 @@ export default function AdminList() {
                         </li>
                     </ul>
                 </div>
-                <img src="" alt="" />
+                <img src={image ? image :"/profile-picture.webp" } alt="" />
                 <table>
                     <thead>
                         <tr>
@@ -37,7 +59,12 @@ export default function AdminList() {
                         </tr>
                     </thead>
                     <tbody>
-                        <AdminSingleItem></AdminSingleItem>
+                        {Items? Items.length > 0 ?
+                        Items.map(item => <AdminSingleItem key={item._id} item={item}></AdminSingleItem>)
+                        :
+                        <></>
+                        :
+                        <></>}
                     </tbody>
                 </table>
             </div>
