@@ -34,14 +34,13 @@ main div.menu ul .hover:hover{
 
 main div.container{
     background-color: white;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 10px;
     border-radius: 10px;
-    gap: 30px ;
-    margin-top: 30px;
+    gap: 20px ;
 }
 
 main div.container div.bottom-side{
@@ -69,7 +68,8 @@ main div.container div.bottom-side div.section label{
     color: #857776;
 }
 main div.container div.bottom-side form > button.button-for-create{
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     background-color: #857776;
     color: white;
     font-size: 20px;
@@ -90,5 +90,5 @@ main div.section:nth-child(1){
 
 main div.section:nth-child(1) div.image-container img {
     width: 300px;
-    height: 300px;
+    height: 200px;
 }

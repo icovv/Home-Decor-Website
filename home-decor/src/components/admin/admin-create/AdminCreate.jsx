@@ -1,7 +1,22 @@
 import { Link } from "react-router-dom"
 import styles from "./AdminCreate.module.css"
+import { useState } from "react"
 
 export default function AdminCreate() {
+
+    let [image,setImg] = useState(null);
+
+    let handleImageChange = (e) => {
+        let file = e.target.files[0];
+        if(file){
+            let reader = new FileReader();
+            reader.onloadend = () => {
+                setImg(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
     return (
         <main>
             <div className={styles.menu}>
@@ -16,11 +31,11 @@ export default function AdminCreate() {
                         <div className={styles.section}>
                             <div className={styles["image-container"]}>
                                 <img
-                                    src="/profile-picture.webp"
+                                    src={image ? image : "/profile-picture.webp"}
                                     alt=""
                                 />
                             </div>
-                            <input type="file" name="title" />
+                            <input type="file" name="img" onChange={handleImageChange} />
                         </div>
                         <div className={styles.section}>
                             <label htmlFor="title">Title</label>
