@@ -23,6 +23,7 @@ export default function AdminList() {
                         </li>
                     </ul>
                 </div>
+                <img src="" alt="" />
                 <table>
                     <thead>
                         <tr>
