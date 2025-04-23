@@ -68,7 +68,7 @@ main div.container div.bottom-side div.section label{
     font-weight: bold;
     color: #857776;
 }
-main div.container div.bottom-side form > button.button{
+main div.container div.bottom-side form > button.button-for-create{
     margin-top: 30px;
     background-color: #857776;
     color: white;
@@ -77,6 +77,7 @@ main div.container div.bottom-side form > button.button{
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    width: 100%
 }
 main div.section:nth-child(1){
     display: flex;

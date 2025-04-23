@@ -71,9 +71,12 @@ main div.container table tbody td button{
     cursor: pointer;
     padding: 5px 10px;
     color: white;
+    margin-top: 0px;
+    width: auto;
 }
 main div.container table tbody td button:nth-child(1){
     background-color: #857776;
+    margin-right: 10px;
 }
 main div.container table tbody td button:nth-child(2){
     background-color: red;

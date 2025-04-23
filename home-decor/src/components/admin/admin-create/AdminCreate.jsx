@@ -42,7 +42,7 @@ export default function AdminCreate() {
                             <label htmlFor="characteristics">Characteristics</label>
                             <textarea name="characteristics" rows={4} defaultValue={""} />
                         </div>
-                        <button type="submit" className={styles.button}>
+                        <button type="submit" className={styles["button-for-create"]}>
                             Save
                         </button>
                     </form>

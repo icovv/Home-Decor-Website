@@ -37,10 +37,6 @@ export default function AdminList() {
                     </thead>
                     <tbody>
                         <AdminSingleItem></AdminSingleItem>
-                        <AdminSingleItem></AdminSingleItem>
-                        <AdminSingleItem></AdminSingleItem>
-                        <AdminSingleItem></AdminSingleItem>
-                        <AdminSingleItem></AdminSingleItem>
                     </tbody>
                 </table>
             </div>
