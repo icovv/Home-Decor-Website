@@ -17,6 +17,7 @@ export default function AdminCreate() {
     let [imgFile,setImgFile] = useState(null);
 
     let handleImageChange = (e) => {
+        //add validation for image type (extension - jpg/png etc )
         let file = e.target.files[0];
         if(file){
             setImgFile(file);

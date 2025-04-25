@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
 
-export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState){
+export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,itemType,image){
     let [err,setErr] = useState([]);
     let navigate = useNavigate();
 
@@ -28,7 +28,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         if(result.message){
             let errMsg = [];
-            result.message.forEach(x => errMsg.push({message:`${x}`})); // add error handling
+            result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);
             changeValues({email: value.email, password: ""});
             return
@@ -57,7 +57,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         if(result.message){
             let errMsg = [];
-            result.message.forEach(x => errMsg.push({message:`${x}`})); // add error handling
+            result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);
             changeValues({email: value.email, password: ""});
             return
@@ -113,7 +113,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         if(result.message){
             let errMsg = [];
-            result.message.forEach(x => errMsg.push({message:`${x}`})); // add error handling
+            result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);
             changeValues(initValue);
             return
@@ -121,6 +121,10 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         navigate('/');
 
+    }
+
+    let adminCreate = async (e) => {
+        
     }
 
     let divKill = () => {
