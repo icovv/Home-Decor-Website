@@ -6,6 +6,7 @@ import useForm from "../../../hooks/useForm";
 export default function AdminCreate() {
 
     let {value,changeHandler,changeValues} = useForm({
+        cat:"",
         title:'',
         col:'',
         price:'',
@@ -43,20 +44,27 @@ export default function AdminCreate() {
         let user = JSON.parse(localStorage.getItem('userData'))
         formData.append("email",user.email);
 
-        try {
-            let response = await fetch('http://localhost:3000/admin/bedroom',{
-                method: "POST",
-                headers: {
-                    "X-Authorization" : user.accessToken
-                },
-                body: formData
-            })
+        changeValues({        cat:"",
+            title:'',
+            col:'',
+            price:'',
+            description:'',
+            characteristics:''})
+
+        // try {
+        //     let response = await fetch('http://localhost:3000/admin/bedroom',{
+        //         method: "POST",
+        //         headers: {
+        //             "X-Authorization" : user.accessToken
+        //         },
+        //         body: formData
+        //     })
     
-            let result = await response.json();
-            console.log(result);
-        } catch (error) {
-            console.log(error);
-        }
+        //     let result = await response.json();
+        //     console.log(result);
+        // } catch (error) {
+        //     console.log(error);
+        // }
 
 
     }
@@ -80,6 +88,16 @@ export default function AdminCreate() {
                                 />
                             </div>
                             <input type="file" name="img" onChange={handleImageChange} />
+                        </div>
+                        <div className={styles.section}>
+                            <label htmlFor="title">Category</label>
+                            <select name="cat" id="cat" value={value.cat || ""} onChange={changeHandler}>
+                                <option value="">---</option>
+                                <option value="bedroom">Bedroom</option>
+                                <option value="decor">Decor</option>
+                                <option value="dining-room">Dining-Room</option>
+                            </select>
+                            {/* <input type="text" name="title" id="title" value={value.title || ""} onChange={changeHandler} /> */}
                         </div>
                         <div className={styles.section}>
                             <label htmlFor="title">Title</label>

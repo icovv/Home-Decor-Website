@@ -54,7 +54,7 @@ main div.container div.bottom-side form{
     flex-direction: column;
     gap: 20px;
 }
-main div.container div.bottom-side form input, textarea{
+main div.container div.bottom-side form input, textarea,select{
     width: 100%;
     padding: 1em;
     border-radius: 10px;
