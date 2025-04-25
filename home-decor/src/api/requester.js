@@ -6,8 +6,10 @@ export async function requester(method,url,data,contentType){
     if (data){
         if(contentType){
         options.headers["Content-Type"] = `application/json`;
-        }
         options.body = JSON.stringify(data);
+        } else{
+        options.body = data;
+        }
     }
 
     let user = JSON.parse(localStorage.getItem('userData'))
