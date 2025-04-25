@@ -45,7 +45,6 @@ export default function AdminList() {
                         </li>
                     </ul>
                 </div>
-                <img src={image ? image :"/profile-picture.webp" } alt="" />
                 <table>
                     <thead>
                         <tr>
