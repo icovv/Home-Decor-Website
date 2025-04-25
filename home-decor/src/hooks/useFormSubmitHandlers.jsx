@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
 import { adminCreateItem } from "../api/AdminService";
+import createNewItemDataErrorHandler from "../utils/createNewItemDataErrorHandler";
 
 export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,image){
     let [err,setErr] = useState([]);
@@ -126,6 +127,24 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
     let adminCreate = async (e) => {
         e.preventDefault();
+        let user = JSON.parse(localStorage.getItem('userData'))
+
+        if(!user || !user.email){
+            setErr([{message:"Something went wrong, please log into your account!"}]);
+            navigate('/*',{state:{"errors":[{message:"Something went wrong, please log into your account!"}]}})
+            setTimeout(() => {
+                setLocalStorageState("delete");
+            },30);
+            return; 
+        }
+
+        let errors = createNewItemDataErrorHandler(value,image);
+
+        if(errors.length > 0){
+            setErr(errors);
+            return;
+        }
+
         let formData = new FormData();
         formData.append("image", image);
         formData.append("title", value.title);
@@ -133,15 +152,16 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         formData.append("price", value.price);
         formData.append("description", value.description);
         formData.append("characteristics", value.characteristics);
-        
-        let user = JSON.parse(localStorage.getItem('userData'))
         formData.append("email",user.email);
+
 
         let result = await adminCreateItem(value.cat,formData);
 
         if(result.message){
-            console.log(result.message);
-            return;
+            let errMsg = [];
+            result.message.forEach(x => errMsg.push({message:`${x}`}));
+            setErr(errMsg);
+            return
         }
 
         navigate("/admin/list")
