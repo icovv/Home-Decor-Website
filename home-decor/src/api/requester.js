@@ -1,10 +1,12 @@
-export async function requester(method,url,data){
+export async function requester(method,url,data,contentType){
     let options ={
         method,
         headers: {}
     }
     if (data){
+        if(contentType){
         options.headers["Content-Type"] = `application/json`;
+        }
         options.body = JSON.stringify(data);
     }
 
@@ -36,11 +38,11 @@ export async function requester(method,url,data){
 export async function get(url){
     return await requester(`Get`,url);
 }
-export async function post(url,data){
-    return await requester(`POST`,url,data);
+export async function post(url,data,contentType){
+    return await requester(`POST`,url,data,contentType);
 }
-export async function put(url,data){
-    return await requester(`PUT`,url,data);
+export async function put(url,data,contentType){
+    return await requester(`PUT`,url,data,contentType);
 }
 export async function del(url){
     return await requester(`Delete`,url);

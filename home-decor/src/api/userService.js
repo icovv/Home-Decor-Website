@@ -2,11 +2,11 @@ import {put,post,get} from '../api/requester.js'
 
 
 export async function login(email,password) {
-    return await post("http://localhost:3000/login",{email,password});
+    return await post("http://localhost:3000/login",{email,password},true);
 }
 
 export async function register(email,password) {
-    return await post("http://localhost:3000/register",{email,password});
+    return await post("http://localhost:3000/register",{email,password},true);
 }
 
 export async function logout() {
@@ -14,7 +14,7 @@ export async function logout() {
 }
 
 export async function changeProfileData(id,name,town,streetName,streetNumber,tel) {
-    return await put(`http://localhost:3000/profile/${id}`,{name,town,streetName,streetNumber,tel});
+    return await put(`http://localhost:3000/profile/${id}`,{name,town,streetName,streetNumber,tel},true);
 }
 
 export async function getProfileData(id){
