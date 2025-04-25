@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 import styles from "./AdminCreate.module.css"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import useForm from "../../../hooks/useForm";
 import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers";
+import Error from "../../common/errors/Error";
+import AuthContext from "../../../contexts/AuthContext";
 
 export default function AdminCreate() {
 
@@ -18,6 +20,8 @@ export default function AdminCreate() {
     let [image,setImg] = useState(null);
     let [imgFile,setImgFile] = useState(null);
 
+    let {setLocalStorageState} = useContext(AuthContext)
+
     let handleImageChange = (e) => {
         //add validation for image type (extension - jpg/png etc )
         let file = e.target.files[0];
@@ -32,10 +36,16 @@ export default function AdminCreate() {
 
     }
 
-    let {adminCreate} = useFormSubmitHandlers(value,false,changeValues,false,false,imgFile)
+    let {err,divKill,adminCreate} = useFormSubmitHandlers(value,false,changeValues,false,setLocalStorageState,imgFile)
 
     return (
         <main>
+            {err.length > 0
+                ?
+                <Error err={err} divKill={divKill}></Error>
+                :
+                <></>
+            }
             <div className={styles.menu}>
                 <ul>
                 <Link to='/admin/list' className={`${styles.item} ${styles.hover}`}>Items</Link>
