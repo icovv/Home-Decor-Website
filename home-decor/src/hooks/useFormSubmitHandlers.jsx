@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
+import { adminCreateItem } from "../api/AdminService";
 
-export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,itemType,image){
+export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,image){
     let [err,setErr] = useState([]);
     let navigate = useNavigate();
 
@@ -124,7 +125,27 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
     }
 
     let adminCreate = async (e) => {
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append("image", image);
+        formData.append("title", value.title);
+        formData.append("col", value.col);
+        formData.append("price", value.price);
+        formData.append("description", value.description);
+        formData.append("characteristics", value.characteristics);
         
+        let user = JSON.parse(localStorage.getItem('userData'))
+        formData.append("email",user.email);
+
+        let result = await adminCreateItem(value.cat,formData);
+
+        if(result.message){
+            console.log(result.message);
+            return;
+        }
+
+        navigate("/admin/list")
+
     }
 
     let divKill = () => {
@@ -137,6 +158,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         loginSubmitHandler,
         registerSubmitHandler,
         logoutSubmitHandler,
-        changeProfileDataSubmitHandler
+        changeProfileDataSubmitHandler,
+        adminCreate
     }
 }

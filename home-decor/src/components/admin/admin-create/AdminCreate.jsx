@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import styles from "./AdminCreate.module.css"
 import { useState } from "react"
 import useForm from "../../../hooks/useForm";
+import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers";
 
 export default function AdminCreate() {
 
@@ -31,43 +32,7 @@ export default function AdminCreate() {
 
     }
 
-    let submitHandler = async (e) => {
-        e.preventDefault();
-        let formData = new FormData();
-        formData.append("image", imgFile);
-        formData.append("title", value.title);
-        formData.append("col", value.col);
-        formData.append("price", value.price);
-        formData.append("description", value.description);
-        formData.append("characteristics", value.characteristics);
-        
-        let user = JSON.parse(localStorage.getItem('userData'))
-        formData.append("email",user.email);
-
-        changeValues({        cat:"",
-            title:'',
-            col:'',
-            price:'',
-            description:'',
-            characteristics:''})
-
-        // try {
-        //     let response = await fetch('http://localhost:3000/admin/bedroom',{
-        //         method: "POST",
-        //         headers: {
-        //             "X-Authorization" : user.accessToken
-        //         },
-        //         body: formData
-        //     })
-    
-        //     let result = await response.json();
-        //     console.log(result);
-        // } catch (error) {
-        //     console.log(error);
-        // }
-
-
-    }
+    let {adminCreate} = useFormSubmitHandlers(value,false,changeValues,false,false,imgFile)
 
     return (
         <main>
@@ -79,7 +44,7 @@ export default function AdminCreate() {
             </div>
             <div className={styles.container}>
                 <div className={styles['bottom-side']}>
-                    <form onSubmit={submitHandler}>
+                    <form onSubmit={adminCreate}>
                         <div className={styles.section}>
                             <div className={styles["image-container"]}>
                                 <img
