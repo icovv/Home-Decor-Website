@@ -1,6 +1,6 @@
 .error-message {
     display: block;
-    animation: cssAnimation 0s ease-in 60s forwards;
+    animation: cssAnimation 0s ease-in 3s forwards;
     background-color: #ff4c4c;
     color: white;
     padding: 1em;
