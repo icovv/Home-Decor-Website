@@ -66,24 +66,7 @@ export default function AdminList() {
         </div>
         :
         <div className={styles.container}>
-        <div className={styles.content}>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Collection</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Characteristics</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
-        </div>
+                    <div className={styles["table-no-items"]}>No items found in the database!</div>
         </div>}
         </main>
     )
