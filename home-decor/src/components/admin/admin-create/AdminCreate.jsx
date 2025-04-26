@@ -22,7 +22,7 @@ export default function AdminCreate() {
     let [imgFile,setImgFile] = useState(null);
 
     let {setLocalStorageState} = useContext(AuthContext)
-    let {handleImageChange} = useHandleImageChange(setImgFile,setImg)
+    let {handleImageChange,error,killDiv} = useHandleImageChange(setImgFile,setImg)
 
     let {err,divKill,adminCreate} = useFormSubmitHandlers(value,false,changeValues,false,setLocalStorageState,imgFile)
 
@@ -31,6 +31,10 @@ export default function AdminCreate() {
             {err.length > 0
                 ?
                 <Error err={err} divKill={divKill}></Error>
+                :
+                error.length > 0
+                ?
+                <Error err={error} divKill={killDiv}></Error>
                 :
                 <></>
             }
