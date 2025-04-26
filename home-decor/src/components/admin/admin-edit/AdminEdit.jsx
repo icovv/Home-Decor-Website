@@ -6,9 +6,10 @@ import AuthContext from "../../../contexts/AuthContext";
 import useHandleImageChange from "../../../hooks/useHandleImageChange";
 import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers";
 import Error from "../../common/errors/Error";
+import useEditGetData from "./useEditGetData";
 
 export default function AdminEdit() {
-    let {itemID} = useParams();
+    let {itemID,category} = useParams();
     let {value,changeHandler,changeValues} = useForm({
         cat:"",
         title:'',
@@ -20,6 +21,8 @@ export default function AdminEdit() {
 
     let [image,setImg] = useState(null);
     let [imgFile,setImgFile] = useState(null);
+
+    useEditGetData(itemID,category,changeValues,setImg);
 
     let {setLocalStorageState} = useContext(AuthContext)
     let {handleImageChange} = useHandleImageChange(setImgFile,setImg);
@@ -54,7 +57,7 @@ export default function AdminEdit() {
                         </div>
                          <div className={styles.section}>
                           <label htmlFor="cat">Category</label>
-                          <input type="text" name="cat" id="cat" disabled="true" value={value.cat || ""} onChange={changeHandler} />
+                          <input type="text" name="cat" id="cat" disabled value={value.cat || ""} onChange={changeHandler} />
                         </div>
                         <div className={styles.section}>
                             <label htmlFor="title">Title</label>
