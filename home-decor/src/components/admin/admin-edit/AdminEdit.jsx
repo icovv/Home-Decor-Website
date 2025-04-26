@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import AuthContext from "../../../contexts/AuthContext";
 import useHandleImageChange from "../../../hooks/useHandleImageChange";
 import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers";
+import Error from "../../common/errors/Error";
 
 export default function AdminEdit() {
     let {itemID} = useParams();
@@ -27,6 +28,12 @@ export default function AdminEdit() {
 
     return (
         <main>
+            {err.length > 0
+            ?
+            <Error err={err} divKill={divKill}></Error>
+            :
+            <></>
+            }
             <div className={styles.menu}>
                 <ul>
                 <Link to='/admin/list' className={`${styles.item} ${styles.hover}`}>Items</Link>
