@@ -16,13 +16,13 @@ export default function useGetItemsData(setActive){
         setActive("bedroom")
         let result = await getAdminItems(category);
 
-        if(result.message){
+        if(result.message && result.code != 200){
             let errMsg = [];
             result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);
             return
         }
-        setActive("bedroom")
+        setActive("bedroom");
         setData(result.items);
     }
 
@@ -36,7 +36,7 @@ export default function useGetItemsData(setActive){
         
         let result = await getAdminItems(category);
 
-        if(result.message){
+        if(result.message && result.code != 200){
             let errMsg = [];
             result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);
@@ -56,7 +56,7 @@ export default function useGetItemsData(setActive){
         
         let result = await getAdminItems(category);
 
-        if(result.message){
+        if(result.message && result.code != 200){
             let errMsg = [];
             result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);
