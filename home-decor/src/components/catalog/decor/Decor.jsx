@@ -1,7 +1,11 @@
+import useCatalogGetData from "../../../hooks/useCatalogGetData"
 import DecorItem from "./decor-single-item/DecorItem"
 import styles from "./Decor.module.css"
 
 export default function Decor(){
+  let {getDecorItems,data} = useCatalogGetData();
+  getDecorItems();
+  console.log(data);
     return (
         <main>
         <div className={styles.container}>
@@ -16,9 +20,11 @@ export default function Decor(){
               <option value="priceDown">Price ↓</option>
             </select>
             <div className={styles["items-container"]}>
-              <DecorItem></DecorItem>
-              <DecorItem></DecorItem>
-              <DecorItem></DecorItem>
+              {data.length > 0
+              ?
+              data.map(x => <DecorItem key={x._id} item={x}></DecorItem>)
+              :
+              <></>}
             </div>
           </div>
         </div>

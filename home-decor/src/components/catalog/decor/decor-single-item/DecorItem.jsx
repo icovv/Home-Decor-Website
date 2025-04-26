@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom"
 import styles from "../Decor.module.css"
 
-export default function DecorItem(){
+export default function DecorItem(
+  {
+    item
+  }
+){
     return(
         <div className={styles.item}>
         <div className={styles["image-container"]}>
           <img
-            src="/decor.jpg"
-            alt=""
+            src={`data:${item.contentType};base64,${item.picture}`}
+            alt="image"
           />
         </div>
-        <h3>This is the image name!</h3>
-        <p>144.90$</p>
-        <Link to={"/catalog-decor/:itemID"}>
+        <h3>{item.tittle}</h3>
+        <p>{item.price}$</p>
+        <Link to={`/catalog-decor/${item._id}`}>
         <button className={styles.width100}>
           <i className="fa-solid fa-cart-shopping" />
-          <span>ADD TO CART</span>{" "}
+          <span>VIEW ITEM</span>
         </button>
         </Link>
       </div>
