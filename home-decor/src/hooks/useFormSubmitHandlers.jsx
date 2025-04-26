@@ -4,6 +4,7 @@ import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
 import { adminCreateItem, adminEditItem } from "../api/AdminService";
 import createNewItemDataErrorHandler from "../utils/createNewItemDataErrorHandler";
+import editItemDataErrorHandler from "../utils/editItemDataErrorHandler";
 
 export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,image,id){
     let [err,setErr] = useState([]);
@@ -172,7 +173,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         let user = JSON.parse(localStorage.getItem('userData'));
 
         let categories = {"Bedroom":"bedroom", "Decor":"decor", "Dining-Room":"dining-room"};
-        
+
         if(!user || !user.email){
             setErr([{message:"Something went wrong, please log into your account!"}]);
             navigate('/*',{state:{"errors":[{message:"Something went wrong, please log into your account!"}]}})
@@ -181,13 +182,12 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
             },30);
             return; 
         }
+        let errors = editItemDataErrorHandler(value,image)
 
-        // let errors = createNewItemDataErrorHandler(value,image);
-
-        // if(errors.length > 0){
-        //     setErr(errors);
-        //     return;
-        // }
+        if(errors.length > 0){
+            setErr(errors);
+            return;
+        }
 
         console.log(value.title);
         let formData = new FormData();

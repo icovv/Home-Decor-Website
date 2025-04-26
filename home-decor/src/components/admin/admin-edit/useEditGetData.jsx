@@ -15,7 +15,6 @@ export default async function useEditGetData(id,category, changeValues,setImg) {
                 console.log(response.message);
                 return;
             }
-
             changeValues({
                 cat: categories[response.cat],
                 title: response.tittle,
