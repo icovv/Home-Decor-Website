@@ -80,10 +80,12 @@ main div.container table tbody td button{
     border-radius: 6px;
     outline: none;
     cursor: pointer;
-    padding: 5px 10px;
     color: white;
     margin-top: 0px;
     width: auto;
+}
+main div.container table tbody td button i {
+    padding: 5px 10px;
 }
 main div.container table tbody td button:nth-child(1){
     background-color: #857776;
