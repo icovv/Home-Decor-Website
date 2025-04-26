@@ -2,7 +2,7 @@ main{
     background-color: #dfd4c8;
     min-height: 80vh;
     font-family: "Cormorant", serif;
-    padding-top: 20px;
+    padding: 0px;
 }
 
 main div.menu{
@@ -19,6 +19,10 @@ main div.menu ul{
     font-size: 30px;
     align-items: center;
     justify-content: space-evenly;
+}
+
+main div.second-ul{
+    width: 30%;
 }
 main div.menu ul li{
     cursor: pointer;
