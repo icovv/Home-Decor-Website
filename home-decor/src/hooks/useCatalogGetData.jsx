@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { getCatalogItems } from "../api/catalogService";
+import { catalogGetSingleItem, getCatalogItems } from "../api/catalogService";
 
-export default function useCatalogGetData(){
+export default function useCatalogGetData(id){
     let [err,setErr] = useState([]);
     let [data,setData] = useState([]);
 
@@ -56,10 +56,64 @@ export default function useCatalogGetData(){
             getData()
         },[])
     }
+    let getSingleBedroomItem = (e) => {
+        useEffect(() => {
+            let getData = async() => {
+                let response = await catalogGetSingleItem("bedroom",id);
+                    if(response.message && response.code != 200){
+                        let err = [{message: data.message}]
+                        navigate('*',{state: {errors: err} })
+                        console.log(data.message);
+                        return;
+                    }
+
+                    setData(response);
+            }
+            getData()
+        },[])
+    }
+    let getSingleDecorItem = (e) => {
+        useEffect(() => {
+            let getData = async() => {
+                let response = await catalogGetSingleItem("decor",id);
+
+                    if(response.message && response.code != 200){
+                        let err = [{message: data.message}]
+                        navigate('*',{state: {errors: err} })
+                        console.log(data.message);
+                        return;
+                    }
+
+                    setData(response);
+            }
+            getData()
+        },[])
+    }
+    let getSingleDiningRoomItem = (e) => {
+        useEffect(() => {
+            let getData = async() => {
+                let response = await catalogGetSingleItem("dining-room",id);
+
+                    if(response.message && response.code != 200){
+                        let err = [{message: data.message}]
+                        navigate('*',{state: {errors: err} })
+                        console.log(data.message);
+                        return;
+                    }
+
+                    setData(response);
+            }
+            getData()
+        },[])
+    }
+
     return {
         data,
         getBedroomItems,
         getDecorItems,
-        getDiningRoomItems
+        getDiningRoomItems,
+        getSingleBedroomItem,
+        getSingleDecorItem,
+        getSingleDiningRoomItem
     }
 }
