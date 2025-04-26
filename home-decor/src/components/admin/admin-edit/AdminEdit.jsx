@@ -25,7 +25,7 @@ export default function AdminEdit() {
     useEditGetData(itemID,category,changeValues,setImg);
 
     let {setLocalStorageState} = useContext(AuthContext)
-    let {handleImageChange} = useHandleImageChange(setImgFile,setImg);
+    let {handleImageChange,error,killDiv} = useHandleImageChange(setImgFile,setImg);
 
     let {err,divKill,adminEdit} = useFormSubmitHandlers(value,false,changeValues,false,setLocalStorageState,imgFile, itemID)
 
@@ -34,6 +34,10 @@ export default function AdminEdit() {
             {err.length > 0
             ?
             <Error err={err} divKill={divKill}></Error>
+            :
+            error.length > 0
+            ?
+            <Error err={error} divKill={killDiv}></Error>
             :
             <></>
             }
