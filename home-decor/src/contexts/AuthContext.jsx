@@ -62,6 +62,7 @@ export const AuthProvider = ({
         logoutHandler,
         changeProfileDataHandler,
         setLocalStorageState,
+        user: state? state: null,
         accessToken: state.accessToken ? state.accessToken : false,
         userID: state._id ? state._id : false,
         isAdmin: state.admin ? !!state.admin : false,
