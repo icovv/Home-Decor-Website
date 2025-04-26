@@ -5,6 +5,7 @@ import useForm from "../../../hooks/useForm";
 import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers";
 import Error from "../../common/errors/Error";
 import AuthContext from "../../../contexts/AuthContext";
+import useHandleImageChange from "../../../hooks/useHandleImageChange";
 
 export default function AdminCreate() {
 
@@ -21,20 +22,7 @@ export default function AdminCreate() {
     let [imgFile,setImgFile] = useState(null);
 
     let {setLocalStorageState} = useContext(AuthContext)
-
-    let handleImageChange = (e) => {
-        //add validation for image type (extension - jpg/png etc )
-        let file = e.target.files[0];
-        if(file){
-            setImgFile(file);
-            let reader = new FileReader();
-            reader.onloadend = () => {
-                setImg(reader.result);
-            };
-            reader.readAsDataURL(file);
-        }
-
-    }
+    let {handleImageChange} = useHandleImageChange(setImgFile,setImg)
 
     let {err,divKill,adminCreate} = useFormSubmitHandlers(value,false,changeValues,false,setLocalStorageState,imgFile)
 
