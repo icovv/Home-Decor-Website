@@ -28,7 +28,7 @@ export default function DecorDetails(){
             </span>
             <span className={styles.number}>{counter}</span>
             <span className={styles.icons}>
-              <i className="fa-solid fa-minus" onClick={() => {setCounter(counter < 1 ? 0 : counter - 1 )}} />
+              <i className="fa-solid fa-minus" onClick={() => {setCounter(counter <= 1 ? 1 : counter - 1 )}} />
             </span>
           </div>
         </div>
