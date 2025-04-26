@@ -24,11 +24,13 @@ import { AuthProvider } from './contexts/AuthContext'
 import AuthGuard from './guards/AuthGuard'
 import Logout from './components/common/logout/Logout'
 import NotFound from './components/common/notFound/NotFound'
+import { CartProvider } from './contexts/CartContext'
 
 function App() {
   return (
     <>
       <AuthProvider>
+      <CartProvider>
       <Header></Header>
 
       <Routes>
@@ -55,6 +57,7 @@ function App() {
       </Routes>
       
       <Footer></Footer>
+      </CartProvider>
       </AuthProvider>
     </>
   )
