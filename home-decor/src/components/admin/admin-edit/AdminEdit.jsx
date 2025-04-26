@@ -39,20 +39,15 @@ export default function AdminEdit() {
                         <div className={styles.section}>
                             <div className={styles["image-container"]}>
                                 <img
-                                    src="/profile-picture.webp"
+                                    src={image ? image : "/profile-picture.webp"}
                                     alt="Image"
                                 />
                             </div>
-                            <input type="file" name="title" />
+                            <input type="file" name="title" onChange={handleImageChange} />
                         </div>
                          <div className={styles.section}>
                           <label htmlFor="cat">Category</label>
-                          <select name="cat" id="cat" value={value.cat || ""} onChange={changeHandler} >
-                           <option value="">---</option>
-                           <option value="bedroom">Bedroom</option>
-                           <option value="decor">Decor</option>
-                           <option value="dining-room">Dining-Room</option>
-                         </select>
+                          <input type="text" name="cat" id="cat" disabled="true" value={value.cat || ""} onChange={changeHandler} />
                         </div>
                         <div className={styles.section}>
                             <label htmlFor="title">Title</label>
