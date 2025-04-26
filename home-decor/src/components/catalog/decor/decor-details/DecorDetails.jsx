@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import styles from "./DecorDetails.module.css"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useCatalogGetData from "../../../../hooks/useCatalogGetData";
+import CartContext from "../../../../contexts/CartContext";
 
 export default function DecorDetails(){
+  let {addToCart} = useContext(CartContext)
   let {itemID} = useParams();
   let [counter,setCounter] = useState(1);
   let {getSingleDecorItem,data} = useCatalogGetData(itemID);
@@ -33,7 +35,7 @@ export default function DecorDetails(){
           </div>
         </div>
       </div>
-      <button>
+      <button onClick={() => {data["counter"] = counter; addToCart(data)}}>
         <i className="fa-solid fa-cart-shopping" />
         <span>ADD TO CART</span>{" "}
       </button>
