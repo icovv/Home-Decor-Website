@@ -16,3 +16,7 @@ export async function deleteItem(category,id) {
 export async function adminEditItem(type,formData,id){
     return await put(`http://localhost:3000/admin/${type}/${id}`,formData,false);
 }
+
+export async function adminGetSingleItem(category,id) {
+    return await get(`http://localhost:3000/${category}/${id}`)
+}
