@@ -1,14 +1,15 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import styles from "./BedroomDetails.module.css"
 import { useParams } from "react-router-dom";
 import useCatalogGetData from "../../../../hooks/useCatalogGetData";
+import CartContext from "../../../../contexts/CartContext";
 
 export default function BedroomDetails(){
+  let {addToCart} = useContext(CartContext)
   let {itemID} = useParams();
   let [counter,setCounter] = useState(1);
   let {getSingleBedroomItem,data} = useCatalogGetData(itemID);
   getSingleBedroomItem();
-  console.log(data);
     return(
         <main className={styles.details}>
   <div className={styles.container}>
@@ -34,9 +35,9 @@ export default function BedroomDetails(){
           </div>
         </div>
       </div>
-      <button>
+      <button onClick={() => {data["counter"] = counter; addToCart(data)}}>
         <i className="fa-solid fa-cart-shopping" />
-        <span>ADD TO CART</span>{" "}
+        <span >ADD TO CART</span>{" "}
       </button>
       <div className={styles["bottom-side"]}>
         <div className={styles.description}>
