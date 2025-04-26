@@ -15,7 +15,7 @@ export default function AdminSingleItem({
             <td>{item.characteristics}</td>
             <td>
                 <button>
-                    <Link to={`/admin/edit/${item._id}`}><i className="fa-solid fa-pen-to-square" /></Link>
+                    <Link to={`/admin/edit/${item.cat}/${item._id}`}><i className="fa-solid fa-pen-to-square" /></Link>
                 </button>
                 <button id = {`${item._id} ${item.cat}`} onClick={onDelete}>
                     <i className="fa-solid fa-trash" id = {`${item._id} ${item.cat}`} />
