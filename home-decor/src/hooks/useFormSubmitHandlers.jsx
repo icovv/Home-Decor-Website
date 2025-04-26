@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import registerErrorHandler from "../utils/registerErrorHandler";
 import changeProfileDataErrorHandler from "../utils/changeProfileDataErrorHandler";
-import { adminCreateItem } from "../api/AdminService";
+import { adminCreateItem, adminEditItem } from "../api/AdminService";
 import createNewItemDataErrorHandler from "../utils/createNewItemDataErrorHandler";
 
-export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,image){
+export default function useFormSubmitHandlers(value, handler,changeValues,userID,setLocalStorageState,image,id){
     let [err,setErr] = useState([]);
     let navigate = useNavigate();
 
@@ -167,6 +167,50 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         navigate("/admin/list")
 
     }
+    let adminEdit = async (e) => {
+        e.preventDefault();
+        let user = JSON.parse(localStorage.getItem('userData'))
+
+        if(!user || !user.email){
+            setErr([{message:"Something went wrong, please log into your account!"}]);
+            navigate('/*',{state:{"errors":[{message:"Something went wrong, please log into your account!"}]}})
+            setTimeout(() => {
+                setLocalStorageState("delete");
+            },30);
+            return; 
+        }
+
+        // let errors = createNewItemDataErrorHandler(value,image);
+
+        // if(errors.length > 0){
+        //     setErr(errors);
+        //     return;
+        // }
+
+        console.log(value.title);
+        let formData = new FormData();
+        formData.append("title", value.title);
+        formData.append("col", value.col);
+        formData.append("price", value.price);
+        formData.append("description", value.description);
+        formData.append("characteristics", value.characteristics);
+        formData.append("email",user.email);
+        if(image) {
+        formData.append("image", image);
+        }
+
+        let result = await adminEditItem(value.cat,formData,id);
+
+        if(result.message && result.code != 200){
+            let errMsg = [];
+            result.message.forEach(x => errMsg.push({message:`${x}`}));
+            setErr(errMsg);
+            return
+        }
+
+        navigate("/admin/list")
+
+    }
 
     let divKill = () => {
         setErr([]);
@@ -179,6 +223,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         registerSubmitHandler,
         logoutSubmitHandler,
         changeProfileDataSubmitHandler,
-        adminCreate
+        adminCreate,
+        adminEdit
     }
 }
