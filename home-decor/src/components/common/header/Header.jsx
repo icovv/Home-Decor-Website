@@ -2,10 +2,14 @@ import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 import { useContext } from "react"
 import AuthContext from "../../../contexts/AuthContext"
-import useFormSubmitHandlers from "../../../hooks/useFormSubmitHandlers"
+import CartContext from "../../../contexts/CartContext"
+import CartSingleItemPreview from "./cartSingleItemPreview/cartSingleItemPreview"
 
 export default function Header(){
   let {isAuthenticated, isAdmin, userID} = useContext(AuthContext)
+  let {state} = useContext(CartContext)
+  let totalAmount = 0;
+  state.forEach(x => totalAmount += (x.counter * x.price))
     return (
         <>
         <header className= {styles.visible}>
@@ -67,44 +71,25 @@ export default function Header(){
           <ul>
             <li>
             <Link to='/cart'><i className="fa-solid fa-bag-shopping Cart" />
-              <div className= {styles["item-counter"]}>1</div>
+            {state.length > 0 
+            ?
+            <div className= {styles["item-counter"]}>{state.length}</div>
+            :
+            <></>}
               <div className={styles["cart-dropdown"]}>
                 <div className={styles["top-section"]}>
                   <h3>Order</h3>
                 </div>
                 <div className={styles["middle-section"]}>
-                  <div className={styles["cart-single-item"]}>
-                    <div className={styles["left-side"]}>
-                      <img
-                        src="/decor.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className={styles["right-side"]}>
-                      <h4>Product Name</h4>
-                      <div className={styles["bottom-side"]}>
-                        <span>1 x 65.00$</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles["cart-single-item"]}>
-                    <div className={styles["left-side"]}>
-                      <img
-                        src="/decor.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className={styles["right-side"]}>
-                      <h4>Product Name</h4>
-                      <div className={styles["bottom-side"]}>
-                        <span>1 x 65.00$</span>
-                      </div>
-                    </div>
-                  </div>
+                  {state.length > 0
+                  ?
+                  state.map(x => <CartSingleItemPreview key={x.itemId} item={x}></CartSingleItemPreview>)
+                  :
+                  <></>}
                 </div>
                 <div className={styles["bottom-section"]}>
                   <h4>Total Amount:</h4>
-                  <p>20.99$</p>
+                  <p>{totalAmount} $</p>
                 </div>
               </div>
               </Link> 
