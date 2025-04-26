@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom"
 import styles from "./CartOverview.module.css"
+import { useContext } from "react"
+import CartContext from "../../../contexts/CartContext"
+import CartSingleItem from "./cartSingleItem/CartSingleItem";
 
 export default function CartOverview() {
+    let {state} = useContext(CartContext);
+    let totalAmount = 0;
+    state.forEach(x => totalAmount += (x.counter * x.price))
     return (
         <main>
             <div className={styles.container}>
@@ -11,109 +17,18 @@ export default function CartOverview() {
                 <div className={styles["bottom-side"]}>
                     <div className={styles["left-side"]}>
                         <div className={styles.container}>
-                            <div className={styles["single-item"]}>
-                                <div className={styles["left-side"]}>
-                                    <img
-                                        src="/decor.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className={styles["right-side"]}>
-                                    <h3 className={styles["text-center"]}>Product Name</h3>
-                                    <div className={styles["price-quantity"]}>
-                                        <div className={styles["counter"]}>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-plus" />
-                                            </span>
-                                            <span className={styles.number}>10</span>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-minus" />
-                                            </span>
-                                        </div>
-                                        <p>65.00$</p>
-                                    </div>
-                                    <a>Remove</a>
-                                </div>
-                            </div>
-                            <div className={styles["single-item"]}>
-                                <div className={styles["left-side"]}>
-                                    <img
-                                        src="/decor.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className={styles["right-side"]}>
-                                    <h3 className={styles["text-center"]}>Product Name</h3>
-                                    <div className={styles["price-quantity"]}>
-                                        <div className={styles["counter"]}>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-plus" />
-                                            </span>
-                                            <span className={styles.number}>10</span>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-minus" />
-                                            </span>
-                                        </div>
-                                        <p>65.00$</p>
-                                    </div>
-                                    <a>Remove</a>
-                                </div>
-                            </div>
-                            <div className={styles["single-item"]}>
-                                <div className={styles["left-side"]}>
-                                    <img
-                                        src="/decor.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className={styles["right-side"]}>
-                                    <h3 className={styles["text-center"]}>Product Name</h3>
-                                    <div className={styles["price-quantity"]}>
-                                        <div className={styles["counter"]}>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-plus" />
-                                            </span>
-                                            <span className={styles.number}>10</span>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-minus" />
-                                            </span>
-                                        </div>
-                                        <p>65.00$</p>
-                                    </div>
-                                    <a>Remove</a>
-                                </div>
-                            </div>
-                            <div className={styles["single-item"]}>
-                                <div className={styles["left-side"]}>
-                                    <img
-                                        src="/decor.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className={styles["right-side"]}>
-                                    <h3 className={styles["text-center"]}>Product Name</h3>
-                                    <div className={styles["price-quantity"]}>
-                                        <div className={styles["counter"]}>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-plus" />
-                                            </span>
-                                            <span className={styles.number}>10</span>
-                                            <span className={styles.icons}>
-                                                <i className="fa-solid fa-minus" />
-                                            </span>
-                                        </div>
-                                        <p>65.00$</p>
-                                    </div>
-                                    <a>Remove</a>
-                                </div>
-                            </div>
+                        {state.length > 0
+                        ?
+                        state.map(x => <CartSingleItem key={x.itemId} item={x}></CartSingleItem>)
+                        :
+                        <></>}
                         </div>
                     </div>
                     <div className={styles["right-side"]}>
                         <h3>Your Order</h3>
                         <div className={styles["total-amount"]}>
                             <h4>Total Amount</h4>
-                            <p>200.00$</p>
+                            <p>{totalAmount} $</p>
                         </div>
                         <Link to='/cart/order'>Continue</Link>
                     </div>

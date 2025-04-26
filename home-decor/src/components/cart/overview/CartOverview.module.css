@@ -30,6 +30,7 @@ main div.container div.bottom-side{
 main div.container div.bottom-side > div.left-side{
     display: flex;
     flex: 0 0 calc((100% - 30px)/2);
+    min-height: 60vh;
 }
 
 main div.container div.bottom-side > div.left-side > div.container{
