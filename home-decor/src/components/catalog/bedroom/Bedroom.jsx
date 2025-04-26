@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom"
 import styles from "./Bedroom.module.css"
 import BedroomItem from "./bedroom-single-item/BedroomItem"
+import useCatalogGetData from "../../../hooks/useCatalogGetData"
 
 export default function Bedroom(){
+    let {getBedroomItems, data} = useCatalogGetData();
+    getBedroomItems();
+    console.log(data);
     return(
         <main>
   <div className={styles.container}>
@@ -17,9 +21,11 @@ export default function Bedroom(){
         <option value="priceDown">Price ↓</option>
       </select>
       <div className={styles["items-container"]}>
-        <BedroomItem></BedroomItem>
-        <BedroomItem></BedroomItem>
-        <BedroomItem></BedroomItem>
+        {data.length > 0
+        ?
+        data.map(x => <BedroomItem key={x._id} item={x}></BedroomItem>)
+        :
+        <></>}
       </div>
     </div>
   </div>
