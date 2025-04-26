@@ -157,7 +157,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
 
         let result = await adminCreateItem(value.cat,formData);
 
-        if(result.message){
+        if(result.message && result.code != 200){
             let errMsg = [];
             result.message.forEach(x => errMsg.push({message:`${x}`}));
             setErr(errMsg);

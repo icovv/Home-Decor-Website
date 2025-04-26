@@ -1,29 +1,10 @@
 import { Link } from 'react-router-dom'
 import styles from '../AdminList.module.css'
+import onDelete from './onDelete'
 
 export default function AdminSingleItem({
     item
 }) {
-    console.log(item);
-
-    let onDelete = async (e) => {
-        let user = JSON.parse(localStorage.getItem('userData'))
-        try {
-            let response = await fetch(`http://localhost:3000/admin/bedroom/${item._id}`,{
-                method: "DELETE",
-                headers: {
-                    "X-Authorization" : user.accessToken,
-                    "Content-Type": `application/json`
-                },
-            })
-    
-            let result = await response.json();
-            console.log(result);
-            window.location.reload();
-        } catch (error) {
-            console.log(error);
-        }
-    }
     return (
         <tr>
             <td>{item._id}</td>
@@ -36,8 +17,8 @@ export default function AdminSingleItem({
                 <button>
                     <Link to={`/admin/edit/${item._id}`}><i className="fa-solid fa-pen-to-square" /></Link>
                 </button>
-                <button onClick={onDelete}>
-                    <i className="fa-solid fa-trash" />
+                <button id = {`${item._id} ${item.cat}`} onClick={onDelete}>
+                    <i className="fa-solid fa-trash" id = {`${item._id} ${item.cat}`} />
                 </button>
             </td>
         </tr>
