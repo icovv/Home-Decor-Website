@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import useCartLocalStorageState from "../hooks/useCartLocalStorageState";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 
 let CartContext = createContext();
 
@@ -16,18 +16,32 @@ export const CartProvider = ({
         if(index !== -1){
             localArr[index] = data;
             setLocalStorageState(localArr);
-            console.log(state, "towa e state-a sled update v1");
         } else {
         localArr.push(data);
         setLocalStorageState(localArr);
-        console.log(state, "towa e state-a sled update");
         }
 
    }
+
+   let removeFromCart = (data) => {
+        let localArr = [...state];
+        let newState = localArr.filter(x => x.itemId !== data.itemId);
+        setLocalStorageState(newState);
+    }
     
+    let changeCount = (data,newCounter) => {
+        let localArr = [...state];
+        let newState = localArr.filter(x => x.itemId !== data.itemId);
+        data.counter = newCounter;
+        newState.push(data);
+        setLocalStorageState(newState);
+    }
+
     let values = {
         state,
-        addToCart
+        addToCart,
+        removeFromCart,
+        changeCount
     }
 
     return(
