@@ -169,8 +169,10 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
     }
     let adminEdit = async (e) => {
         e.preventDefault();
-        let user = JSON.parse(localStorage.getItem('userData'))
+        let user = JSON.parse(localStorage.getItem('userData'));
 
+        let categories = {"Bedroom":"bedroom", "Decor":"decor", "Dining-Room":"dining-room"};
+        
         if(!user || !user.email){
             setErr([{message:"Something went wrong, please log into your account!"}]);
             navigate('/*',{state:{"errors":[{message:"Something went wrong, please log into your account!"}]}})
@@ -199,7 +201,7 @@ export default function useFormSubmitHandlers(value, handler,changeValues,userID
         formData.append("image", image);
         }
 
-        let result = await adminEditItem(value.cat,formData,id);
+        let result = await adminEditItem(categories[value.cat],formData,id);
 
         if(result.message && result.code != 200){
             let errMsg = [];
