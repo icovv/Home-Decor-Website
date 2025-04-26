@@ -3,10 +3,13 @@ import styles from "./AdminList.module.css"
 import AdminSingleItem from "./admin-single-item/AdminSingleItem"
 import useGetItemsData from "./useGetItemsData";
 import Error from "../../common/errors/Error";
+import { useState } from "react";
 
 export default function AdminList() {
+    
+    let [activeLink,setActive] = useState('');
 
-    let {data,useGetBedroomItems, useGetDecorItems, useGetDiningRoomItems,err,divKill} = useGetItemsData()
+    let {data,useGetBedroomItems, useGetDecorItems, useGetDiningRoomItems,err,divKill} = useGetItemsData(setActive)
 
     return (
         <main>
@@ -25,12 +28,14 @@ export default function AdminList() {
         </div>
         <div className={`${styles.menu} ${styles['second-ul']}`}>
             <ul>
-                <li className={`${styles.item} ${styles.hover}`} id="bedroom" onClick={useGetBedroomItems}>Bedroom</li>
-                <li className={`${styles.item} ${styles.hover}`} id="decor"  onClick={useGetDecorItems}>Decor</li>
-                <li className={`${styles.item} ${styles.hover}`} id="dining-room"  onClick={useGetDiningRoomItems}>Dining Room</li>
+                <li className={activeLink == "bedroom" ? `${styles.item} ${styles.hover} ${styles.underline}`:`${styles.item} ${styles.hover}`} id="bedroom" onClick={useGetBedroomItems}>Bedroom</li>
+                <li className={activeLink == "decor" ? `${styles.item} ${styles.hover} ${styles.underline}`:`${styles.item} ${styles.hover}`} id="decor"  onClick={useGetDecorItems}>Decor</li>
+                <li className={activeLink == "dining-room" ? `${styles.item} ${styles.hover} ${styles.underline}`:`${styles.item} ${styles.hover}`}id="dining-room"  onClick={useGetDiningRoomItems}>Dining Room</li>
             </ul>
         </div>
         {data.length > 0 
+        ?
+        activeLink !== "" 
         ?
         <div className={styles.container}>
         <div className={styles.content}>
@@ -66,8 +71,11 @@ export default function AdminList() {
         </div>
         :
         <div className={styles.container}>
-                    <div className={styles["table-no-items"]}>No items found in the database!</div>
-        </div>}
+        <div className={styles["table-no-items"]}>No items found in the database!</div>
+        </div>
+        :
+        <></>    
+            }
         </main>
     )
 }

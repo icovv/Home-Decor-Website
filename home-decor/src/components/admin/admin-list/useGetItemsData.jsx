@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { getAdminItems } from "../../../api/AdminService";
 
-export default function useGetItemsData(){
+export default function useGetItemsData(setActive){
     let [data,setData] = useState([]);
     let [err,setErr] = useState([]);
     let categories = ["bedroom","decor","dining-room"]
@@ -13,7 +13,7 @@ export default function useGetItemsData(){
             setErr([{message:"Please select a valid category!"}]);
             return;
         }
-
+        setActive("bedroom")
         let result = await getAdminItems(category);
 
         if(result.message){
@@ -22,8 +22,7 @@ export default function useGetItemsData(){
             setErr(errMsg);
             return
         }
-        console.log(result)
-
+        setActive("bedroom")
         setData(result.items);
     }
 
@@ -34,7 +33,7 @@ export default function useGetItemsData(){
             setErr([{message:"Please select a valid category!"}]);
             return;
         }
-
+        
         let result = await getAdminItems(category);
 
         if(result.message){
@@ -43,8 +42,8 @@ export default function useGetItemsData(){
             setErr(errMsg);
             return
         }
-
-         setData(result.items);
+        setActive("decor")
+        setData(result.items);
     }
 
     let useGetDiningRoomItems = async (e) => {
@@ -54,7 +53,7 @@ export default function useGetItemsData(){
             setErr([{message:"Please select a valid category!"}]);
             return;
         }
-
+        
         let result = await getAdminItems(category);
 
         if(result.message){
@@ -63,8 +62,8 @@ export default function useGetItemsData(){
             setErr(errMsg);
             return
         }
-
-         setData(result.items);
+        setActive("dining-room")
+        setData(result.items);
     }
     
     let divKill = () => {
