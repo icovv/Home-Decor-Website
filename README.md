@@ -1,10 +1,12 @@
 ## Home-Decor-Website </br>
 
-## This project is currently in active development </br>
-
 ## Overview
 
-This is a front-end application (SPA) for an online store selling bedroom items (such as bedding), decorations for your house and dining room items (such as plates and cutlery). The website includes all CRUD operations.There will be an admin panel where only the user who is logged in with the admin account will be able to create, update and delete the items. All other users will have accounts so they can order items easier as their data will be prepopulated in the neccassary fields in the order screen. More information can be read below.
+This is a front-end application (SPA) for an online store selling bedroom items (such as bedding), decorations for your house and dining room items (such as plates and cutlery). The website includes all CRUD operations.There will be an admin panel where only the user who is logged in with the admin account will be able to create, update and delete the items. All other users will have accounts so they can order items easier as their data will be prepopulated in the neccassary fields in the order screen. Not logged in users can use the application and make an order too. More information can be read below.
+
+#Admin account <br>
+email: admin@admin.admin <br>
+password: 123456 <br>
 
 ## Project Status
 
