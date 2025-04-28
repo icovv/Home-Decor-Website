@@ -36,6 +36,16 @@ More features and improvements are planned as follows:
 - ❌ Order process - Cart functionality with all items visible (adding, removing items and increasing their quantity), Cart Overview with information for the order and also Delivery and Payment section. </br>
 - ❌ Admin section where user can create new items to be listed, update existing items and also delete them </br>
 
+# Public Part
+
+The public part consists of the following: <br/>
+<br/>
+* Home page -> Background image with text and on the bottom three links leading to the Bedroom/Decor/Dining-Room catalog pages.
+* Bedroom/Decor/Dining-room catalog pages -> On the top a background image with the name of the catalog page visible and below it all items currently created for this section with the information uploaded by the admin -> name, price and also a view button leading to the details page.
+* Details page -> Each item from each category has a details page showing the uploaded image, name, price, characteristics, description and quantity counter. When the user choose the quantity and clicks on add to cart the item goes into his cart, the status of the cart ( a small number below the cart icon in the top right corner of the header) changes and also the item can be viewed when the user hovers over the cart icon in the top right corner of the header.
+* Cart Overview -> When the user clicks on the cart icon he can see all items and their quantities that he has added to his cart and he can also remove them or change the quantity. On the right the user can see a Continue button and also the total amount he has decided to order.
+* Delivery and Payment -> Here the user has a small form to fill with details for his delivery and also on the right he has a continue button and above it all items and the quantities he has ordered with total amount for each item and also a total amount for the order.  
+
 ## Technical Details
 
 - React, HTML and CSS are user for the Frontend
