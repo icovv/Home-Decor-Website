@@ -14,9 +14,6 @@ export default function Home(){
             voluptate necessitatibus, iste modi dolor. Dolor cum et iste iure
             nobis!
             </p>
-            <button>
-            <a href="">Explore</a>
-            </button>
         </div>
         </div>
     </div>
