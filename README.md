@@ -31,6 +31,23 @@ This project is currently in active development. Below features are **implemente
 - ✅ Bedroom, Decor, and Dining Room Pages:
   - Fetching and displaying items from the database for Bedroom, Decor, and Dining Room pages.
   - Implemented dynamic filter functionality on each page, allowing users to filter products based on specific categories, styles, and other attributes.
+- ✅ Item Details
+  - Seamless fetching of individual item details when navigating to a product's page.
+  - Detailed view includes full item information such as description, price, and specifications.
+- ✅ Cart and Order Process
+  - Fully functional cart system:
+    - Add, remove, and update item quantities directly within the cart.
+    - Real-time cart overview displaying all selected items and their totals.
+  - Complete order processing flow:
+    - Delivery Information section for entering shipping details.
+    - Payment Section to complete the order (mock based on the project scope) 
+- ✅ Admin Panel
+  - Dedicated Admin Section to manage products:
+  - Create new items and immediately list them in the appropriate category.
+  - Update existing item details (edit name, price, description, etc.).
+  - Delete items permanently from the inventory.
+  - Admin interface built for simplicity, efficiency, and secure data handling.
+
 More features and improvements are planned as follows:
 
 - ❌ Loading spinner </br>
@@ -38,11 +55,6 @@ More features and improvements are planned as follows:
 - ❌ Memorization of the application (React.memo, useMemo, useCallback) to improve the application </br>
 - ❌ Pagination for the admin List section </br>
 - ❌ filter for the catalog pages of each cateogory </br>
-
-- ❌ Fetching items from DB for Bedroom, Decor and Dining Room pages and also the filters in those pages. </br>
-- ❌ Fetching item when going into the details of the items from the above-mentioned pages. </br>
-- ❌ Order process - Cart functionality with all items visible (adding, removing items and increasing their quantity), Cart Overview with information for the order and also Delivery and Payment section. </br>
-- ❌ Admin section where user can create new items to be listed, update existing items and also delete them </br>
 
 # Public Part
 
