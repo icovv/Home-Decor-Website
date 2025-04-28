@@ -28,8 +28,16 @@ This project is currently in active development. Below features are **implemente
   - Login
   - Register
   - Edit profile
-
+- ✅ Bedroom, Decor, and Dining Room Pages:
+  - Fetching and displaying items from the database for Bedroom, Decor, and Dining Room pages.
+  - Implemented dynamic filter functionality on each page, allowing users to filter products based on specific categories, styles, and other attributes.
 More features and improvements are planned as follows:
+
+- ❌ Loading spinner </br>
+- ❌ Lazy Loading the admin page </br>
+- ❌ Memorization of the application (React.memo, useMemo, useCallback) to improve the application </br>
+- ❌ Pagination for the admin List section </br>
+- ❌ filter for the catalog pages of each cateogory </br>
 
 - ❌ Fetching items from DB for Bedroom, Decor and Dining Room pages and also the filters in those pages. </br>
 - ❌ Fetching item when going into the details of the items from the above-mentioned pages. </br>
@@ -43,8 +51,24 @@ The public part consists of the following: <br/>
 * Home page -> Background image with text and on the bottom three links leading to the Bedroom/Decor/Dining-Room catalog pages.
 * Bedroom/Decor/Dining-room catalog pages -> On the top a background image with the name of the catalog page visible and below it all items currently created for this section with the information uploaded by the admin -> name, price and also a view button leading to the details page.
 * Details page -> Each item from each category has a details page showing the uploaded image, name, price, characteristics, description and quantity counter. When the user choose the quantity and clicks on add to cart the item goes into his cart, the status of the cart ( a small number below the cart icon in the top right corner of the header) changes and also the item can be viewed when the user hovers over the cart icon in the top right corner of the header.
+* Login/Register pages -> You can either login if you have an account or create a new one in order to use the functionalities in the private part.
+* Logout -> Logout logs the user out of his account.
 * Cart Overview -> When the user clicks on the cart icon he can see all items and their quantities that he has added to his cart and he can also remove them or change the quantity. On the right the user can see a Continue button and also the total amount he has decided to order.
-* Delivery and Payment -> Here the user has a small form to fill with details for his delivery and also on the right he has a continue button and above it all items and the quantities he has ordered with total amount for each item and also a total amount for the order.  
+* Delivery and Payment -> Here the user has a small form to fill with details for his delivery and also on the right he has a continue button and above it all items and the quantities he has ordered with total amount for each item and also a total amount for the order.
+
+# Private Part
+
+**Users**
+
+* Profile page -> the user can view and change his profile details also he can erase all the ones he has listed (if for some reason he does not want them to be stored). If the user has details in the Delivery and Payment page he can see them prepopulated.
+
+**Admin**
+
+* Admin page -> The admin can choose either "List" or "Create".
+* List -> The admin can chose one of the categories and a list with all currently listed ones will show with two buttons for deleting an item and also for editing one.
+* Create -> The user goes to a form where he can fill information in order to create a new item. The mandatory input fields are the photo, category, name and also price of the product.
+* Edit -> When the admin goes to the Edit page all the information of the chosen product will be prepopulated and he can change/ erase all of them except the price and name. If the user does not change the picture the same from the database stays. The category fields is disabled and the user cannot change it.
+* Delete -> When the admin clicks on the delete button in the List section a pop up will show asking him if he is sure he wants to delete the item. If he accepts the item is removed from the database and the admin goes back to the List page to chose a cateogory to view.
 
 ## Technical Details
 
